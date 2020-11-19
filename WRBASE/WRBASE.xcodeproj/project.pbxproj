@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		07444943256688230088A546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07444942256688230088A546 /* AppDelegate.swift */; };
-		07444945256688230088A546 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07444944256688230088A546 /* SceneDelegate.swift */; };
 		07444947256688230088A546 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07444946256688230088A546 /* ViewController.swift */; };
 		0744494A256688230088A546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07444948256688230088A546 /* Main.storyboard */; };
 		0744494C256688260088A546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0744494B256688260088A546 /* Assets.xcassets */; };
 		0744494F256688260088A546 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0744494D256688260088A546 /* LaunchScreen.storyboard */; };
 		0744495A256688260088A546 /* WRBASETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07444959256688260088A546 /* WRBASETests.swift */; };
 		07444965256688260088A546 /* WRBASEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07444964256688260088A546 /* WRBASEUITests.swift */; };
+		0744499125669BB80088A546 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0744499025669BB80088A546 /* Splash.storyboard */; };
+		0744499625669BC40088A546 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0744499525669BC40088A546 /* Splash.swift */; };
+		074449A12566C74B0088A546 /* ReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074449A02566C74B0088A546 /* ReplaceSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,6 @@
 /* Begin PBXFileReference section */
 		0744493F256688230088A546 /* WRBASE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WRBASE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07444942256688230088A546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		07444944256688230088A546 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		07444946256688230088A546 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07444949256688230088A546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0744494B256688260088A546 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +50,9 @@
 		07444960256688260088A546 /* WRBASEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WRBASEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07444964256688260088A546 /* WRBASEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WRBASEUITests.swift; sourceTree = "<group>"; };
 		07444966256688260088A546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0744499025669BB80088A546 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		0744499525669BC40088A546 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
+		074449A02566C74B0088A546 /* ReplaceSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				07444941256688230088A546 /* WRBASE */,
-				07444958256688260088A546 /* WRBASETests */,
-				07444963256688260088A546 /* WRBASEUITests */,
 				07444940256688230088A546 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -99,8 +101,9 @@
 		07444941256688230088A546 /* WRBASE */ = {
 			isa = PBXGroup;
 			children = (
+				07444985256698570088A546 /* App */,
+				07444986256698740088A546 /* Tests */,
 				07444942256688230088A546 /* AppDelegate.swift */,
-				07444944256688230088A546 /* SceneDelegate.swift */,
 				07444946256688230088A546 /* ViewController.swift */,
 				07444948256688230088A546 /* Main.storyboard */,
 				0744494B256688260088A546 /* Assets.xcassets */,
@@ -126,6 +129,57 @@
 				07444966256688260088A546 /* Info.plist */,
 			);
 			path = WRBASEUITests;
+			sourceTree = "<group>";
+		};
+		074449842566984F0088A546 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0744498F25669B900088A546 /* Splash */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		07444985256698570088A546 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0744499F2566C7370088A546 /* Utils */,
+				0744498E256698BC0088A546 /* Resources */,
+				074449842566984F0088A546 /* Scenes */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		07444986256698740088A546 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				07444958256688260088A546 /* WRBASETests */,
+				07444963256688260088A546 /* WRBASEUITests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		0744498E256698BC0088A546 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0744498F25669B900088A546 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				0744499025669BB80088A546 /* Splash.storyboard */,
+				0744499525669BC40088A546 /* Splash.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		0744499F2566C7370088A546 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				074449A02566C74B0088A546 /* ReplaceSegue.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +288,7 @@
 				0744494F256688260088A546 /* LaunchScreen.storyboard in Resources */,
 				0744494C256688260088A546 /* Assets.xcassets in Resources */,
 				0744494A256688230088A546 /* Main.storyboard in Resources */,
+				0744499125669BB80088A546 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +315,8 @@
 			files = (
 				07444947256688230088A546 /* ViewController.swift in Sources */,
 				07444943256688230088A546 /* AppDelegate.swift in Sources */,
-				07444945256688230088A546 /* SceneDelegate.swift in Sources */,
+				074449A12566C74B0088A546 /* ReplaceSegue.swift in Sources */,
+				0744499625669BC40088A546 /* Splash.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,7 +529,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WRBASETests/Info.plist;
+				INFOPLIST_FILE = Tests/WRBASETests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -494,7 +550,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WRBASETests/Info.plist;
+				INFOPLIST_FILE = Tests/WRBASETests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -514,7 +570,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WRBASEUITests/Info.plist;
+				INFOPLIST_FILE = "Tests/WRBAS EUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -533,7 +589,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WRBASEUITests/Info.plist;
+				INFOPLIST_FILE = "Tests/WRBAS EUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
