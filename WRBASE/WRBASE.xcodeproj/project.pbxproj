@@ -15,6 +15,12 @@
 		0744499125669BB80088A546 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0744499025669BB80088A546 /* Splash.storyboard */; };
 		0744499625669BC40088A546 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0744499525669BC40088A546 /* Splash.swift */; };
 		074449A12566C74B0088A546 /* ReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074449A02566C74B0088A546 /* ReplaceSegue.swift */; };
+		07FBC0E82566D40E00446CFC /* BsseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC0E72566D40E00446CFC /* BsseViewController.swift */; };
+		07FBC0F82566D5EE00446CFC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC0F72566D5EE00446CFC /* Colors.swift */; };
+		07FBC0FD2566D77800446CFC /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07FBC0FC2566D77800446CFC /* MainView.storyboard */; };
+		07FBC1022566D78C00446CFC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC1012566D78C00446CFC /* MainView.swift */; };
+		07FBC1082566DE1C00446CFC /* CBWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC1072566DE1C00446CFC /* CBWebView.swift */; };
+		07FBC1712567E47700446CFC /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC1702567E47700446CFC /* FirebaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		0744499025669BB80088A546 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		0744499525669BC40088A546 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		074449A02566C74B0088A546 /* ReplaceSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceSegue.swift; sourceTree = "<group>"; };
+		07FBC0E72566D40E00446CFC /* BsseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BsseViewController.swift; sourceTree = "<group>"; };
+		07FBC0F72566D5EE00446CFC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		07FBC0FC2566D77800446CFC /* MainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainView.storyboard; sourceTree = "<group>"; };
+		07FBC1012566D78C00446CFC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		07FBC1072566DE1C00446CFC /* CBWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBWebView.swift; sourceTree = "<group>"; };
+		07FBC1702567E47700446CFC /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +136,7 @@
 		074449842566984F0088A546 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				07FBC0E02566D09500446CFC /* MainView */,
 				0744498F25669B900088A546 /* Splash */,
 			);
 			path = Scenes;
@@ -132,6 +145,8 @@
 		07444985256698570088A546 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				07FBC16F2567E46400446CFC /* Managers */,
+				07FBC0E42566D26100446CFC /* CustomComponents */,
 				074449A82566CA670088A546 /* Delegates */,
 				0744499F2566C7370088A546 /* Utils */,
 				0744498E256698BC0088A546 /* Resources */,
@@ -171,6 +186,7 @@
 		0744499F2566C7370088A546 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				07FBC0F72566D5EE00446CFC /* Colors.swift */,
 				074449A02566C74B0088A546 /* ReplaceSegue.swift */,
 			);
 			path = Utils;
@@ -182,6 +198,56 @@
 				07444942256688230088A546 /* AppDelegate.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		07FBC0E02566D09500446CFC /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				07FBC0FC2566D77800446CFC /* MainView.storyboard */,
+				07FBC1012566D78C00446CFC /* MainView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		07FBC0E42566D26100446CFC /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				07FBC10F2566DE5600446CFC /* Hybrid */,
+				07FBC0E62566D3FC00446CFC /* UIKit */,
+			);
+			path = CustomComponents;
+			sourceTree = "<group>";
+		};
+		07FBC0E62566D3FC00446CFC /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				07FBC1062566DCF300446CFC /* Controllers */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		07FBC1062566DCF300446CFC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				07FBC0E72566D40E00446CFC /* BsseViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		07FBC10F2566DE5600446CFC /* Hybrid */ = {
+			isa = PBXGroup;
+			children = (
+				07FBC1072566DE1C00446CFC /* CBWebView.swift */,
+			);
+			path = Hybrid;
+			sourceTree = "<group>";
+		};
+		07FBC16F2567E46400446CFC /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				07FBC1702567E47700446CFC /* FirebaseManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +355,7 @@
 			files = (
 				0744494F256688260088A546 /* LaunchScreen.storyboard in Resources */,
 				0744494C256688260088A546 /* Assets.xcassets in Resources */,
+				07FBC0FD2566D77800446CFC /* MainView.storyboard in Resources */,
 				0744499125669BB80088A546 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,8 +382,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				07444943256688230088A546 /* AppDelegate.swift in Sources */,
+				07FBC1022566D78C00446CFC /* MainView.swift in Sources */,
+				07FBC0F82566D5EE00446CFC /* Colors.swift in Sources */,
+				07FBC1082566DE1C00446CFC /* CBWebView.swift in Sources */,
+				07FBC1712567E47700446CFC /* FirebaseManager.swift in Sources */,
 				074449A12566C74B0088A546 /* ReplaceSegue.swift in Sources */,
 				0744499625669BC40088A546 /* Splash.swift in Sources */,
+				07FBC0E82566D40E00446CFC /* BsseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

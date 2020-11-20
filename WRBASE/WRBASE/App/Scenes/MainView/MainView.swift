@@ -1,8 +1,16 @@
 //
-//  MainView.swift
-//  WRBASE
-//
-//  Created by david.martin.saiz on 19/11/2020.
-//
-
 import Foundation
+import UIKit
+
+class MainView: BaseViewController {
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+}

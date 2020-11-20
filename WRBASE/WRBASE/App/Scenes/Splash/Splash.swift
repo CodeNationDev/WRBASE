@@ -10,7 +10,6 @@ class Splash: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-//        Thread.sleep(forTimeInterval: 3.0)
-//        performSegue(withIdentifier: "tutorial", sender: nil)
+        performSegue(withIdentifier: "main", sender: nil)
     }
 }

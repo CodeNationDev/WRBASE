@@ -4,8 +4,7 @@ import UIKit
 import WebKit
 
 class CBWebView: WKWebView {
-    
-    
+   
     
 }
 

@@ -28,16 +28,27 @@
                             <constraint firstItem="9O0-O3-thq" firstAttribute="centerY" secondItem="bMO-Cf-z2k" secondAttribute="centerY" id="JJp-gn-bFN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="HTX-lo-LFC" kind="custom" identifier="main" customClass="ReplaceSegue" customModule="WRBASE" customModuleProvider="target" id="OpC-QT-Gse"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q97-Rw-UZv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-148" y="21"/>
         </scene>
+        <!--MainView-->
+        <scene sceneID="1aj-sp-xyu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainView" id="HTX-lo-LFC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cVh-ov-Ftq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="597" y="21"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ic_launcher" width="192" height="192"/>
         <namedColor name="BlueCaixa1">
-            <color red="0.0" green="0.4941176471" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.49399998784065247" blue="0.68199998140335083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
