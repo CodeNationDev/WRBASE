@@ -21,6 +21,7 @@
 		07FBC1022566D78C00446CFC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC1012566D78C00446CFC /* MainView.swift */; };
 		07FBC1082566DE1C00446CFC /* CBWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC1072566DE1C00446CFC /* CBWebView.swift */; };
 		07FBC1712567E47700446CFC /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC1702567E47700446CFC /* FirebaseManager.swift */; };
+		07FBC17A2567EB3E00446CFC /* CBNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC1792567EB3E00446CFC /* CBNavigator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		07FBC1012566D78C00446CFC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		07FBC1072566DE1C00446CFC /* CBWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBWebView.swift; sourceTree = "<group>"; };
 		07FBC1702567E47700446CFC /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		07FBC1792567EB3E00446CFC /* CBNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBNavigator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 		07FBC0E62566D3FC00446CFC /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				07FBC1782567EAFE00446CFC /* Navigator */,
 				07FBC1062566DCF300446CFC /* Controllers */,
 			);
 			path = UIKit;
@@ -248,6 +251,14 @@
 				07FBC1702567E47700446CFC /* FirebaseManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		07FBC1782567EAFE00446CFC /* Navigator */ = {
+			isa = PBXGroup;
+			children = (
+				07FBC1792567EB3E00446CFC /* CBNavigator.swift */,
+			);
+			path = Navigator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,6 +399,7 @@
 				07FBC1712567E47700446CFC /* FirebaseManager.swift in Sources */,
 				074449A12566C74B0088A546 /* ReplaceSegue.swift in Sources */,
 				0744499625669BC40088A546 /* Splash.swift in Sources */,
+				07FBC17A2567EB3E00446CFC /* CBNavigator.swift in Sources */,
 				07FBC0E82566D40E00446CFC /* BsseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
