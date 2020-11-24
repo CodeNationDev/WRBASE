@@ -4,6 +4,8 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    public var shakeAction:  (()-> Void)?
+    
     public let statusbar: UIView = {
         let view = UIView(frame: .zero)
         view.backgroundColor = .blueCaixa1
@@ -26,4 +28,9 @@ class BaseViewController: UIViewController {
         ])
     }
     
+    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if let action = shakeAction {
+            action()
+        }
+    }
 }

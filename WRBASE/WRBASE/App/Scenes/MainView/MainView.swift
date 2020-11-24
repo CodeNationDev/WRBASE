@@ -14,7 +14,7 @@ class MainView: BaseViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.url = initialURL!
-        
+    
         let nameLongPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(nameLongPressed))
         nameLongPressRecognizer.minimumPressDuration = 0.5
         nameLongPressRecognizer.delaysTouchesBegan = true
