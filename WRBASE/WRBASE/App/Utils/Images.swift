@@ -8,4 +8,12 @@ extension UIImage {
         UIImage(named: "ic_launcher")!
     }
     
+    public static var message:UIImage {
+        UIImage(named: "message")!
+    }
+    
+    public static var backAccessory:UIImage {
+        UIImage(named: "backAccessory")!
+    }
+    
 }

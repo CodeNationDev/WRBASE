@@ -26,6 +26,8 @@
 		076F3BFB256E5E190023CA42 /* TitleNSubtitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076F3BFA256E5E190023CA42 /* TitleNSubtitleView.xib */; };
 		076F3C01256E7A100023CA42 /* TitleHeaderNImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3C00256E7A100023CA42 /* TitleHeaderNImageCell.swift */; };
 		076F3C06256E822B0023CA42 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3C05256E822B0023CA42 /* Images.swift */; };
+		076F3C0D256EA2F30023CA42 /* Logs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076F3C0C256EA2F30023CA42 /* Logs.storyboard */; };
+		076F3C15256EA3040023CA42 /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3C14256EA3040023CA42 /* LogsView.swift */; };
 		078A4FBA256D31BF00BC9BEC /* Logger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FB7256D31BF00BC9BEC /* Logger.xcdatamodeld */; };
 		078A4FBB256D31BF00BC9BEC /* LoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FB9256D31BF00BC9BEC /* LoggerManager.swift */; };
 		078A4FC1256D320500BC9BEC /* UIVIew+RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FC0256D320500BC9BEC /* UIVIew+RoundedView.swift */; };
@@ -81,6 +83,8 @@
 		076F3BFA256E5E190023CA42 /* TitleNSubtitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleNSubtitleView.xib; sourceTree = "<group>"; };
 		076F3C00256E7A100023CA42 /* TitleHeaderNImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderNImageCell.swift; sourceTree = "<group>"; };
 		076F3C05256E822B0023CA42 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		076F3C0C256EA2F30023CA42 /* Logs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Logs.storyboard; sourceTree = "<group>"; };
+		076F3C14256EA3040023CA42 /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
 		078A4FB8256D31BF00BC9BEC /* Logger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logger.xcdatamodel; sourceTree = "<group>"; };
 		078A4FB9256D31BF00BC9BEC /* LoggerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerManager.swift; sourceTree = "<group>"; };
 		078A4FC0256D320500BC9BEC /* UIVIew+RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew+RoundedView.swift"; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 		074449842566984F0088A546 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				076F3C0A256EA2D10023CA42 /* Logs */,
 				076F3A89256D5D9F0023CA42 /* About */,
 				07FBC0E02566D09500446CFC /* MainView */,
 				0744498F25669B900088A546 /* Splash */,
@@ -276,6 +281,15 @@
 				076F3C00256E7A100023CA42 /* TitleHeaderNImageCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		076F3C0A256EA2D10023CA42 /* Logs */ = {
+			isa = PBXGroup;
+			children = (
+				076F3C0C256EA2F30023CA42 /* Logs.storyboard */,
+				076F3C14256EA3040023CA42 /* LogsView.swift */,
+			);
+			path = Logs;
 			sourceTree = "<group>";
 		};
 		078A4FB6256D31BF00BC9BEC /* Logger */ = {
@@ -476,6 +490,7 @@
 				076F3ACF256DC7A20023CA42 /* OpenSans-Regular.ttf in Resources */,
 				07FBC0FD2566D77800446CFC /* MainView.storyboard in Resources */,
 				076F3AC5256DBE1E0023CA42 /* OpenSans-SemiBold.ttf in Resources */,
+				076F3C0D256EA2F30023CA42 /* Logs.storyboard in Resources */,
 				076F3BFB256E5E190023CA42 /* TitleNSubtitleView.xib in Resources */,
 				0744499125669BB80088A546 /* Splash.storyboard in Resources */,
 			);
@@ -508,6 +523,7 @@
 				07FBC0F82566D5EE00446CFC /* Colors.swift in Sources */,
 				076F3BF2256E5CB30023CA42 /* TitleNSubtitleView.swift in Sources */,
 				078A4FC1256D320500BC9BEC /* UIVIew+RoundedView.swift in Sources */,
+				076F3C15256EA3040023CA42 /* LogsView.swift in Sources */,
 				07FBC1082566DE1C00446CFC /* CBWebView.swift in Sources */,
 				07FBC1712567E47700446CFC /* FirebaseManager.swift in Sources */,
 				078A4FBB256D31BF00BC9BEC /* LoggerManager.swift in Sources */,
@@ -689,6 +705,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8LYY6BZ69B;
 				INFOPLIST_FILE = WRBASE/App/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -707,6 +724,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8LYY6BZ69B;
 				INFOPLIST_FILE = WRBASE/App/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
