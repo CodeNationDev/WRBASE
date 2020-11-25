@@ -6,4 +6,8 @@ extension UIColor {
     public static var blueCaixa1 = UIColor(named: "BlueCaixa1", in: .main, compatibleWith: nil)!
     public static var blueCaixa2 = UIColor(named: "BlueCaixa2", in: .main, compatibleWith: nil)!
     public static var blueCaixa3 = UIColor(named: "BlueCaixa3", in: .main, compatibleWith: nil)!
+    public static var genericWhite = UIColor(named: "GenericWhite", in: .main, compatibleWith: nil)!
+    public static var textLight = UIColor(named: "TextLight", in: .main, compatibleWith: nil)!
+    public static var textDark = UIColor(named: "TextDark", in: .main, compatibleWith: nil)!
+    public static var grayCaixa1 = UIColor(named: "GrayCaixa1", in: .main, compatibleWith: nil)!
 }

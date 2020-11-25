@@ -31,13 +31,25 @@
                             <constraint firstItem="npW-4t-SaV" firstAttribute="leading" secondItem="h8d-xJ-BoL" secondAttribute="leading" id="r5y-DO-SwJ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Axc-qs-npj"/>
                     <connections>
                         <outlet property="webView" destination="npW-4t-SaV" id="qRH-hf-et9"/>
+                        <segue destination="t5b-X5-RLY" kind="presentation" identifier="about" modalPresentationStyle="fullScreen" id="IdJ-fl-kKD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qat-y6-NUz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="229" y="111"/>
+            <point key="canvasLocation" x="1136.231884057971" y="110.49107142857143"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="EDH-MG-ay7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="About" id="t5b-X5-RLY" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="sUN-YF-90I"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8BN-2U-RC3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1912" y="110"/>
         </scene>
     </scenes>
     <resources>

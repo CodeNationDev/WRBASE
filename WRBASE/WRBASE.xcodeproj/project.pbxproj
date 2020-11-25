@@ -15,6 +15,17 @@
 		0744499125669BB80088A546 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0744499025669BB80088A546 /* Splash.storyboard */; };
 		0744499625669BC40088A546 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0744499525669BC40088A546 /* Splash.swift */; };
 		074449A12566C74B0088A546 /* ReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074449A02566C74B0088A546 /* ReplaceSegue.swift */; };
+		076F3A8B256D5DF20023CA42 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076F3A8A256D5DF20023CA42 /* About.storyboard */; };
+		076F3A93256D5E050023CA42 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3A92256D5E050023CA42 /* AboutViewController.swift */; };
+		076F3A99256D61F10023CA42 /* CBKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3A98256D61F10023CA42 /* CBKNavigationController.swift */; };
+		076F3AC5256DBE1E0023CA42 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076F3AC4256DBE1E0023CA42 /* OpenSans-SemiBold.ttf */; };
+		076F3ACA256DC0860023CA42 /* NavigatioBarTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3AC9256DC0860023CA42 /* NavigatioBarTitleView.swift */; };
+		076F3ACF256DC7A20023CA42 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076F3ACE256DC7A20023CA42 /* OpenSans-Regular.ttf */; };
+		076F3AD7256E58880023CA42 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3AD6256E58880023CA42 /* Fonts.swift */; };
+		076F3BF2256E5CB30023CA42 /* TitleNSubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3BF1256E5CB30023CA42 /* TitleNSubtitleView.swift */; };
+		076F3BFB256E5E190023CA42 /* TitleNSubtitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076F3BFA256E5E190023CA42 /* TitleNSubtitleView.xib */; };
+		076F3C01256E7A100023CA42 /* TitleHeaderNImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3C00256E7A100023CA42 /* TitleHeaderNImageCell.swift */; };
+		076F3C06256E822B0023CA42 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3C05256E822B0023CA42 /* Images.swift */; };
 		078A4FBA256D31BF00BC9BEC /* Logger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FB7256D31BF00BC9BEC /* Logger.xcdatamodeld */; };
 		078A4FBB256D31BF00BC9BEC /* LoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FB9256D31BF00BC9BEC /* LoggerManager.swift */; };
 		078A4FC1256D320500BC9BEC /* UIVIew+RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FC0256D320500BC9BEC /* UIVIew+RoundedView.swift */; };
@@ -59,6 +70,17 @@
 		0744499025669BB80088A546 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		0744499525669BC40088A546 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		074449A02566C74B0088A546 /* ReplaceSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceSegue.swift; sourceTree = "<group>"; };
+		076F3A8A256D5DF20023CA42 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		076F3A92256D5E050023CA42 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		076F3A98256D61F10023CA42 /* CBKNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBKNavigationController.swift; sourceTree = "<group>"; };
+		076F3AC4256DBE1E0023CA42 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		076F3AC9256DC0860023CA42 /* NavigatioBarTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigatioBarTitleView.swift; sourceTree = "<group>"; };
+		076F3ACE256DC7A20023CA42 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		076F3AD6256E58880023CA42 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		076F3BF1256E5CB30023CA42 /* TitleNSubtitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleNSubtitleView.swift; sourceTree = "<group>"; };
+		076F3BFA256E5E190023CA42 /* TitleNSubtitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleNSubtitleView.xib; sourceTree = "<group>"; };
+		076F3C00256E7A100023CA42 /* TitleHeaderNImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeaderNImageCell.swift; sourceTree = "<group>"; };
+		076F3C05256E822B0023CA42 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		078A4FB8256D31BF00BC9BEC /* Logger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logger.xcdatamodel; sourceTree = "<group>"; };
 		078A4FB9256D31BF00BC9BEC /* LoggerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerManager.swift; sourceTree = "<group>"; };
 		078A4FC0256D320500BC9BEC /* UIVIew+RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew+RoundedView.swift"; sourceTree = "<group>"; };
@@ -144,6 +166,7 @@
 		074449842566984F0088A546 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				076F3A89256D5D9F0023CA42 /* About */,
 				07FBC0E02566D09500446CFC /* MainView */,
 				0744498F25669B900088A546 /* Splash */,
 			);
@@ -175,6 +198,7 @@
 		0744498E256698BC0088A546 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				076F3AC3256DBDCB0023CA42 /* Fonts */,
 				0744494B256688260088A546 /* Assets.xcassets */,
 				0744494D256688260088A546 /* LaunchScreen.storyboard */,
 				07444950256688260088A546 /* Info.plist */,
@@ -196,6 +220,8 @@
 			children = (
 				07FBC0F72566D5EE00446CFC /* Colors.swift */,
 				074449A02566C74B0088A546 /* ReplaceSegue.swift */,
+				076F3AD6256E58880023CA42 /* Fonts.swift */,
+				076F3C05256E822B0023CA42 /* Images.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -206,6 +232,50 @@
 				07444942256688230088A546 /* AppDelegate.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		076F3A89256D5D9F0023CA42 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				076F3A8A256D5DF20023CA42 /* About.storyboard */,
+				076F3A92256D5E050023CA42 /* AboutViewController.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		076F3A97256D61C30023CA42 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				076F3AC9256DC0860023CA42 /* NavigatioBarTitleView.swift */,
+				076F3A98256D61F10023CA42 /* CBKNavigationController.swift */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		076F3AC3256DBDCB0023CA42 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				076F3ACE256DC7A20023CA42 /* OpenSans-Regular.ttf */,
+				076F3AC4256DBE1E0023CA42 /* OpenSans-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		076F3BF6256E5CBD0023CA42 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				076F3BF1256E5CB30023CA42 /* TitleNSubtitleView.swift */,
+				076F3BFA256E5E190023CA42 /* TitleNSubtitleView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		076F3BFF256E79EE0023CA42 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				076F3C00256E7A100023CA42 /* TitleHeaderNImageCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		078A4FB6256D31BF00BC9BEC /* Logger */ = {
@@ -255,6 +325,9 @@
 		07FBC0E62566D3FC00446CFC /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				076F3BFF256E79EE0023CA42 /* Cells */,
+				076F3BF6256E5CBD0023CA42 /* Views */,
+				076F3A97256D61C30023CA42 /* NavigationController */,
 				078A4FBF256D31D700BC9BEC /* Menus */,
 				07FBC1782567EAFE00446CFC /* Navigator */,
 				07FBC1062566DCF300446CFC /* Controllers */,
@@ -398,8 +471,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0744494F256688260088A546 /* LaunchScreen.storyboard in Resources */,
+				076F3A8B256D5DF20023CA42 /* About.storyboard in Resources */,
 				0744494C256688260088A546 /* Assets.xcassets in Resources */,
+				076F3ACF256DC7A20023CA42 /* OpenSans-Regular.ttf in Resources */,
 				07FBC0FD2566D77800446CFC /* MainView.storyboard in Resources */,
+				076F3AC5256DBE1E0023CA42 /* OpenSans-SemiBold.ttf in Resources */,
+				076F3BFB256E5E190023CA42 /* TitleNSubtitleView.xib in Resources */,
 				0744499125669BB80088A546 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,17 +502,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076F3AD7256E58880023CA42 /* Fonts.swift in Sources */,
 				07444943256688230088A546 /* AppDelegate.swift in Sources */,
 				07FBC1022566D78C00446CFC /* MainView.swift in Sources */,
 				07FBC0F82566D5EE00446CFC /* Colors.swift in Sources */,
+				076F3BF2256E5CB30023CA42 /* TitleNSubtitleView.swift in Sources */,
 				078A4FC1256D320500BC9BEC /* UIVIew+RoundedView.swift in Sources */,
 				07FBC1082566DE1C00446CFC /* CBWebView.swift in Sources */,
 				07FBC1712567E47700446CFC /* FirebaseManager.swift in Sources */,
 				078A4FBB256D31BF00BC9BEC /* LoggerManager.swift in Sources */,
+				076F3ACA256DC0860023CA42 /* NavigatioBarTitleView.swift in Sources */,
 				074449A12566C74B0088A546 /* ReplaceSegue.swift in Sources */,
+				076F3C06256E822B0023CA42 /* Images.swift in Sources */,
 				0744499625669BC40088A546 /* Splash.swift in Sources */,
 				078A4FBA256D31BF00BC9BEC /* Logger.xcdatamodeld in Sources */,
+				076F3A99256D61F10023CA42 /* CBKNavigationController.swift in Sources */,
+				076F3C01256E7A100023CA42 /* TitleHeaderNImageCell.swift in Sources */,
 				07FBC17A2567EB3E00446CFC /* CBNavigator.swift in Sources */,
+				076F3A93256D5E050023CA42 /* AboutViewController.swift in Sources */,
 				07FBC0E82566D40E00446CFC /* BsseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

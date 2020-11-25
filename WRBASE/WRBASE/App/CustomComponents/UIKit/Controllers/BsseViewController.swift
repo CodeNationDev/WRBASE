@@ -4,6 +4,10 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
     public var shakeAction:  (()-> Void)?
     
     public let statusbar: UIView = {

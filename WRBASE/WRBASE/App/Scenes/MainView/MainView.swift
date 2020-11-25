@@ -7,13 +7,14 @@ class MainView: BaseViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var webView: CBNavigator!
     public let initialURL: String? = "https://www.google.es"
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         webView.url = initialURL!
+        shakeAction = {
+            self.performSegue(withIdentifier: "about", sender: nil)
+        }
     
         let nameLongPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(nameLongPressed))
         nameLongPressRecognizer.minimumPressDuration = 0.5
