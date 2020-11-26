@@ -37,7 +37,7 @@
 		076F3C52256FFEE90023CA42 /* CBKContextualMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076F3C4C256FFEE90023CA42 /* CBKContextualMenuViewController.xib */; };
 		076F3C53256FFEE90023CA42 /* CBKBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3C4D256FFEE90023CA42 /* CBKBaseViewController.swift */; };
 		076F3C54256FFEE90023CA42 /* CBKContextualMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3C4E256FFEE90023CA42 /* CBKContextualMenuViewController.swift */; };
-		078A4FBA256D31BF00BC9BEC /* Logger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FB7256D31BF00BC9BEC /* Logger.xcdatamodeld */; };
+		078A4FBA256D31BF00BC9BEC /* WRBASE.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FB7256D31BF00BC9BEC /* WRBASE.xcdatamodeld */; };
 		078A4FBB256D31BF00BC9BEC /* LoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FB9256D31BF00BC9BEC /* LoggerManager.swift */; };
 		078A4FC1256D320500BC9BEC /* UIVIew+RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FC0256D320500BC9BEC /* UIVIew+RoundedView.swift */; };
 		07FBC0E82566D40E00446CFC /* BsseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC0E72566D40E00446CFC /* BsseViewController.swift */; };
@@ -200,6 +200,7 @@
 		07444985256698570088A546 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				078A4FB7256D31BF00BC9BEC /* WRBASE.xcdatamodeld */,
 				07FBC16F2567E46400446CFC /* Managers */,
 				07FBC0E42566D26100446CFC /* CustomComponents */,
 				074449A82566CA670088A546 /* Delegates */,
@@ -353,7 +354,6 @@
 		078A4FB6256D31BF00BC9BEC /* Logger */ = {
 			isa = PBXGroup;
 			children = (
-				078A4FB7256D31BF00BC9BEC /* Logger.xcdatamodeld */,
 				078A4FB9256D31BF00BC9BEC /* LoggerManager.swift */,
 			);
 			path = Logger;
@@ -599,7 +599,7 @@
 				074449A12566C74B0088A546 /* ReplaceSegue.swift in Sources */,
 				076F3C06256E822B0023CA42 /* Images.swift in Sources */,
 				0744499625669BC40088A546 /* Splash.swift in Sources */,
-				078A4FBA256D31BF00BC9BEC /* Logger.xcdatamodeld in Sources */,
+				078A4FBA256D31BF00BC9BEC /* WRBASE.xcdatamodeld in Sources */,
 				076F3A99256D61F10023CA42 /* CBKNavigationController.swift in Sources */,
 				076F3C01256E7A100023CA42 /* TitleHeaderNImageCell.swift in Sources */,
 				07FBC17A2567EB3E00446CFC /* CBNavigator.swift in Sources */,
@@ -928,13 +928,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		078A4FB7256D31BF00BC9BEC /* Logger.xcdatamodeld */ = {
+		078A4FB7256D31BF00BC9BEC /* WRBASE.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				078A4FB8256D31BF00BC9BEC /* Logger.xcdatamodel */,
 			);
 			currentVersion = 078A4FB8256D31BF00BC9BEC /* Logger.xcdatamodel */;
-			path = Logger.xcdatamodeld;
+			path = WRBASE.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
