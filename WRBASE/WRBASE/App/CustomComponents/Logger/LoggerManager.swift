@@ -14,7 +14,7 @@ public class LoggerManager: NSObject {
     var fileHandle: FileHandle?
     var context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     
-    public func logCD(message: String) {
+    public func log(message: String) {
         let entity = NSEntityDescription.entity(forEntityName: "Log", in: context!)!
         let log = NSManagedObject(entity: entity, insertInto: context!)
         log.setValue(message, forKey: "message")
@@ -66,25 +66,6 @@ public class LoggerManager: NSObject {
         return nil
     }
     
-    public func log(message: String) {
-        do {
-            let str = "\(dateNow())|\(message)\n"
-            if let filename = filename {
-                if FileManager.default.fileExists(atPath: filename.path) {
-                    fileHandle = try FileHandle(forWritingTo: filename)
-                    fileHandle?.seekToEndOfFile()
-                    if let data = str.data(using: .utf8) {
-                        fileHandle?.write(data)
-                    }
-                    fileHandle?.closeFile()
-                } else {
-                    try str.write(to: filename, atomically: true, encoding: .utf8)
-                }
-            }
-        } catch let error {
-            print("Unable to write logs in file due to: \(error.localizedDescription)")
-        }
-    }
     
     deinit {
         fileHandle?.closeFile()

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="25" id="KGk-i7-Jjw" customClass="CBKContextualMenuOptionCell" customModule="SandpitProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SlY-fr-DRX">
+                        <rect key="frame" x="10" y="7.5" width="30" height="30"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="SQd-5J-dIt"/>
+                            <constraint firstAttribute="height" constant="30" id="dJI-hq-ziM"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlI-gm-FkS">
+                        <rect key="frame" x="53" y="0.0" width="267" height="45"/>
+                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="SlY-fr-DRX" firstAttribute="trailing" secondItem="QlI-gm-FkS" secondAttribute="leading" constant="-13" id="3B3-Cc-27t"/>
+                    <constraint firstItem="QlI-gm-FkS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="67t-gg-Nlo"/>
+                    <constraint firstItem="SlY-fr-DRX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Goh-65-z4m"/>
+                    <constraint firstAttribute="trailing" secondItem="QlI-gm-FkS" secondAttribute="trailing" id="Yg8-y1-lSL"/>
+                    <constraint firstItem="QlI-gm-FkS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="lko-lG-1vV"/>
+                    <constraint firstItem="SlY-fr-DRX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="w6J-Vw-2Yt"/>
+                    <constraint firstAttribute="bottom" secondItem="QlI-gm-FkS" secondAttribute="bottom" id="wdI-KF-Il0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="vBR-wN-TCs"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="iconLabel" destination="SlY-fr-DRX" id="cnf-JF-eLe"/>
+                <outlet property="titleLabel" destination="QlI-gm-FkS" id="Phj-PQ-QHB"/>
+            </connections>
+            <point key="canvasLocation" x="28" y="48.5"/>
+        </tableViewCell>
+    </objects>
+</document>

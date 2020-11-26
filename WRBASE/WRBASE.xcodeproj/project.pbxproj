@@ -15,6 +15,9 @@
 		0744499125669BB80088A546 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0744499025669BB80088A546 /* Splash.storyboard */; };
 		0744499625669BC40088A546 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0744499525669BC40088A546 /* Splash.swift */; };
 		074449A12566C74B0088A546 /* ReplaceSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074449A02566C74B0088A546 /* ReplaceSegue.swift */; };
+		074FC7842570122B00ABC1DE /* ShortcutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074FC7832570122B00ABC1DE /* ShortcutsViewController.swift */; };
+		074FC78C2570123900ABC1DE /* Shortcuts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 074FC78B2570123900ABC1DE /* Shortcuts.storyboard */; };
+		074FC7912570531800ABC1DE /* ShortcutsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074FC7902570531800ABC1DE /* ShortcutsDataManager.swift */; };
 		076F3A8B256D5DF20023CA42 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076F3A8A256D5DF20023CA42 /* About.storyboard */; };
 		076F3A93256D5E050023CA42 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3A92256D5E050023CA42 /* AboutViewController.swift */; };
 		076F3A99256D61F10023CA42 /* CBKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3A98256D61F10023CA42 /* CBKNavigationController.swift */; };
@@ -28,6 +31,12 @@
 		076F3C06256E822B0023CA42 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3C05256E822B0023CA42 /* Images.swift */; };
 		076F3C0D256EA2F30023CA42 /* Logs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076F3C0C256EA2F30023CA42 /* Logs.storyboard */; };
 		076F3C15256EA3040023CA42 /* LogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3C14256EA3040023CA42 /* LogsView.swift */; };
+		076F3C4F256FFEE90023CA42 /* CBKCurvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3C47256FFEE90023CA42 /* CBKCurvedView.swift */; };
+		076F3C50256FFEE90023CA42 /* CBKContextualMenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3C4A256FFEE90023CA42 /* CBKContextualMenuOptionCell.swift */; };
+		076F3C51256FFEE90023CA42 /* CBKContextualMenuOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076F3C4B256FFEE90023CA42 /* CBKContextualMenuOptionCell.xib */; };
+		076F3C52256FFEE90023CA42 /* CBKContextualMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076F3C4C256FFEE90023CA42 /* CBKContextualMenuViewController.xib */; };
+		076F3C53256FFEE90023CA42 /* CBKBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3C4D256FFEE90023CA42 /* CBKBaseViewController.swift */; };
+		076F3C54256FFEE90023CA42 /* CBKContextualMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3C4E256FFEE90023CA42 /* CBKContextualMenuViewController.swift */; };
 		078A4FBA256D31BF00BC9BEC /* Logger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FB7256D31BF00BC9BEC /* Logger.xcdatamodeld */; };
 		078A4FBB256D31BF00BC9BEC /* LoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FB9256D31BF00BC9BEC /* LoggerManager.swift */; };
 		078A4FC1256D320500BC9BEC /* UIVIew+RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FC0256D320500BC9BEC /* UIVIew+RoundedView.swift */; };
@@ -72,6 +81,9 @@
 		0744499025669BB80088A546 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		0744499525669BC40088A546 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		074449A02566C74B0088A546 /* ReplaceSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceSegue.swift; sourceTree = "<group>"; };
+		074FC7832570122B00ABC1DE /* ShortcutsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsViewController.swift; sourceTree = "<group>"; };
+		074FC78B2570123900ABC1DE /* Shortcuts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shortcuts.storyboard; sourceTree = "<group>"; };
+		074FC7902570531800ABC1DE /* ShortcutsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsDataManager.swift; sourceTree = "<group>"; };
 		076F3A8A256D5DF20023CA42 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		076F3A92256D5E050023CA42 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		076F3A98256D61F10023CA42 /* CBKNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBKNavigationController.swift; sourceTree = "<group>"; };
@@ -85,6 +97,12 @@
 		076F3C05256E822B0023CA42 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		076F3C0C256EA2F30023CA42 /* Logs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Logs.storyboard; sourceTree = "<group>"; };
 		076F3C14256EA3040023CA42 /* LogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsView.swift; sourceTree = "<group>"; };
+		076F3C47256FFEE90023CA42 /* CBKCurvedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBKCurvedView.swift; sourceTree = "<group>"; };
+		076F3C4A256FFEE90023CA42 /* CBKContextualMenuOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBKContextualMenuOptionCell.swift; sourceTree = "<group>"; };
+		076F3C4B256FFEE90023CA42 /* CBKContextualMenuOptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBKContextualMenuOptionCell.xib; sourceTree = "<group>"; };
+		076F3C4C256FFEE90023CA42 /* CBKContextualMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBKContextualMenuViewController.xib; sourceTree = "<group>"; };
+		076F3C4D256FFEE90023CA42 /* CBKBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBKBaseViewController.swift; sourceTree = "<group>"; };
+		076F3C4E256FFEE90023CA42 /* CBKContextualMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBKContextualMenuViewController.swift; sourceTree = "<group>"; };
 		078A4FB8256D31BF00BC9BEC /* Logger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logger.xcdatamodel; sourceTree = "<group>"; };
 		078A4FB9256D31BF00BC9BEC /* LoggerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerManager.swift; sourceTree = "<group>"; };
 		078A4FC0256D320500BC9BEC /* UIVIew+RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew+RoundedView.swift"; sourceTree = "<group>"; };
@@ -170,6 +188,7 @@
 		074449842566984F0088A546 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				074FC7822570120F00ABC1DE /* Shortcuts */,
 				076F3C0A256EA2D10023CA42 /* Logs */,
 				076F3A89256D5D9F0023CA42 /* About */,
 				07FBC0E02566D09500446CFC /* MainView */,
@@ -239,6 +258,15 @@
 			path = Delegates;
 			sourceTree = "<group>";
 		};
+		074FC7822570120F00ABC1DE /* Shortcuts */ = {
+			isa = PBXGroup;
+			children = (
+				074FC7832570122B00ABC1DE /* ShortcutsViewController.swift */,
+				074FC78B2570123900ABC1DE /* Shortcuts.storyboard */,
+			);
+			path = Shortcuts;
+			sourceTree = "<group>";
+		};
 		076F3A89256D5D9F0023CA42 /* About */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +320,36 @@
 			path = Logs;
 			sourceTree = "<group>";
 		};
+		076F3C46256FFEE90023CA42 /* ContextualMenu */ = {
+			isa = PBXGroup;
+			children = (
+				076F3C47256FFEE90023CA42 /* CBKCurvedView.swift */,
+				076F3C48256FFEE90023CA42 /* Controllers */,
+			);
+			name = ContextualMenu;
+			path = WRBASE/App/CustomComponents/UIKit/ContextualMenu;
+			sourceTree = SOURCE_ROOT;
+		};
+		076F3C48256FFEE90023CA42 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				076F3C49256FFEE90023CA42 /* Cells */,
+				076F3C4C256FFEE90023CA42 /* CBKContextualMenuViewController.xib */,
+				076F3C4D256FFEE90023CA42 /* CBKBaseViewController.swift */,
+				076F3C4E256FFEE90023CA42 /* CBKContextualMenuViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		076F3C49256FFEE90023CA42 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				076F3C4A256FFEE90023CA42 /* CBKContextualMenuOptionCell.swift */,
+				076F3C4B256FFEE90023CA42 /* CBKContextualMenuOptionCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		078A4FB6256D31BF00BC9BEC /* Logger */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,6 +397,7 @@
 		07FBC0E62566D3FC00446CFC /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				076F3C46256FFEE90023CA42 /* ContextualMenu */,
 				076F3BFF256E79EE0023CA42 /* Cells */,
 				076F3BF6256E5CBD0023CA42 /* Views */,
 				076F3A97256D61C30023CA42 /* NavigationController */,
@@ -369,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				07FBC1702567E47700446CFC /* FirebaseManager.swift */,
+				074FC7902570531800ABC1DE /* ShortcutsDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -485,6 +545,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0744494F256688260088A546 /* LaunchScreen.storyboard in Resources */,
+				076F3C52256FFEE90023CA42 /* CBKContextualMenuViewController.xib in Resources */,
+				076F3C51256FFEE90023CA42 /* CBKContextualMenuOptionCell.xib in Resources */,
 				076F3A8B256D5DF20023CA42 /* About.storyboard in Resources */,
 				0744494C256688260088A546 /* Assets.xcassets in Resources */,
 				076F3ACF256DC7A20023CA42 /* OpenSans-Regular.ttf in Resources */,
@@ -492,6 +554,7 @@
 				076F3AC5256DBE1E0023CA42 /* OpenSans-SemiBold.ttf in Resources */,
 				076F3C0D256EA2F30023CA42 /* Logs.storyboard in Resources */,
 				076F3BFB256E5E190023CA42 /* TitleNSubtitleView.xib in Resources */,
+				074FC78C2570123900ABC1DE /* Shortcuts.storyboard in Resources */,
 				0744499125669BB80088A546 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,16 +581,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				076F3AD7256E58880023CA42 /* Fonts.swift in Sources */,
+				076F3C53256FFEE90023CA42 /* CBKBaseViewController.swift in Sources */,
 				07444943256688230088A546 /* AppDelegate.swift in Sources */,
 				07FBC1022566D78C00446CFC /* MainView.swift in Sources */,
 				07FBC0F82566D5EE00446CFC /* Colors.swift in Sources */,
 				076F3BF2256E5CB30023CA42 /* TitleNSubtitleView.swift in Sources */,
 				078A4FC1256D320500BC9BEC /* UIVIew+RoundedView.swift in Sources */,
 				076F3C15256EA3040023CA42 /* LogsView.swift in Sources */,
+				074FC7842570122B00ABC1DE /* ShortcutsViewController.swift in Sources */,
 				07FBC1082566DE1C00446CFC /* CBWebView.swift in Sources */,
+				076F3C4F256FFEE90023CA42 /* CBKCurvedView.swift in Sources */,
 				07FBC1712567E47700446CFC /* FirebaseManager.swift in Sources */,
+				076F3C54256FFEE90023CA42 /* CBKContextualMenuViewController.swift in Sources */,
 				078A4FBB256D31BF00BC9BEC /* LoggerManager.swift in Sources */,
 				076F3ACA256DC0860023CA42 /* NavigatioBarTitleView.swift in Sources */,
+				074FC7912570531800ABC1DE /* ShortcutsDataManager.swift in Sources */,
 				074449A12566C74B0088A546 /* ReplaceSegue.swift in Sources */,
 				076F3C06256E822B0023CA42 /* Images.swift in Sources */,
 				0744499625669BC40088A546 /* Splash.swift in Sources */,
@@ -535,6 +603,7 @@
 				076F3A99256D61F10023CA42 /* CBKNavigationController.swift in Sources */,
 				076F3C01256E7A100023CA42 /* TitleHeaderNImageCell.swift in Sources */,
 				07FBC17A2567EB3E00446CFC /* CBNavigator.swift in Sources */,
+				076F3C50256FFEE90023CA42 /* CBKContextualMenuOptionCell.swift in Sources */,
 				076F3A93256D5E050023CA42 /* AboutViewController.swift in Sources */,
 				07FBC0E82566D40E00446CFC /* BsseViewController.swift in Sources */,
 			);

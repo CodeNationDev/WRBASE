@@ -35,11 +35,20 @@
                     <connections>
                         <outlet property="webView" destination="npW-4t-SaV" id="qRH-hf-et9"/>
                         <segue destination="t5b-X5-RLY" kind="presentation" identifier="about" modalPresentationStyle="fullScreen" id="IdJ-fl-kKD"/>
+                        <segue destination="mzM-ig-ihy" kind="presentation" identifier="shortcuts" modalPresentationStyle="fullScreen" id="lda-al-qKF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qat-y6-NUz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1136.231884057971" y="110.49107142857143"/>
+        </scene>
+        <!--Shortcuts-->
+        <scene sceneID="O8p-Rx-Vj9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Shortcuts" id="mzM-ig-ihy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HtE-ny-2FF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892" y="21"/>
         </scene>
         <!--About-->
         <scene sceneID="EDH-MG-ay7">
@@ -49,7 +58,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8BN-2U-RC3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1912" y="110"/>
+            <point key="canvasLocation" x="1875" y="210"/>
         </scene>
     </scenes>
     <resources>

@@ -20,6 +20,7 @@ class AboutViewController: BaseViewController, UITableViewDelegate {
         tableView.isScrollEnabled = false
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 90
+        tableView.backgroundColor = .genericWhite
     }
     
     func setupNavBar() {

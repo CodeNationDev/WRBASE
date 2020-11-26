@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "mcaiucomps_ic_1597.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

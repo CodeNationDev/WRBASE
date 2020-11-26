@@ -31,7 +31,7 @@ class CBWebView: WKWebView, WKNavigationDelegate, WKUIDelegate {
                     return
                 }
                 debugPrint("### EP  \(url!.absoluteString)")
-                LoggerManager.shared.logCD(message: "Navigation to: \(url!.absoluteString)")
+                LoggerManager.shared.log(message: "Navigation to: \(url!.absoluteString)")
             }
         }
     }

@@ -30,6 +30,7 @@ class BaseViewController: UIViewController {
             statusbar.topAnchor.constraint(equalTo: view.topAnchor),
             statusbar.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
         ])
+        view.backgroundColor = .genericWhite
     }
     
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {

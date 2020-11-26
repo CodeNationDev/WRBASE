@@ -2,10 +2,15 @@
 import Foundation
 import UIKit
 
+enum Destinations: Int {
+    case shortcuts = 0
+    case about = 1
+}
+
 class MainView: BaseViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var webView: CBNavigator!
-    public let initialURL: String? = "https://www.google.es"
+    public let initialURL: String? = "https://www.qlik.com/us/"
     
     
     override func viewDidLoad() {
@@ -13,7 +18,7 @@ class MainView: BaseViewController, UIGestureRecognizerDelegate {
         navigationController?.navigationBar.isHidden = true
         webView.url = initialURL!
         shakeAction = {
-            self.performSegue(withIdentifier: "about", sender: nil)
+            self.launchContextualMenu()
         }
     
         let nameLongPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(nameLongPressed))
@@ -33,4 +38,28 @@ class MainView: BaseViewController, UIGestureRecognizerDelegate {
             print("LONG PRESS DETECTED!!!")
         }
     }
+}
+
+extension MainView: CBKContextualMenuViewControllerDelegate {
+    func pressed(option: Int) {
+        switch Destinations(rawValue: option) {
+        case .about: self.performSegue(withIdentifier: "about", sender: nil)
+        case .shortcuts: self.performSegue(withIdentifier: "shortcuts", sender: nil)
+        case .none:
+            print("NONE")
+        }
+    }
+    
+    
+    func launchContextualMenu() {
+        let vc = CBKContextualMenuViewController(menuTitle: "Options", options: [
+                                                    CBKContextualMenuOption(withIcon: "bookmarks", andTitle: "Favoritos"),
+                                                    CBKContextualMenuOption(withIcon: "about", andTitle: "Acerca de..."),
+                                                    ],
+        delegate: self)
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true, completion: nil)
+    }
+    
 }
