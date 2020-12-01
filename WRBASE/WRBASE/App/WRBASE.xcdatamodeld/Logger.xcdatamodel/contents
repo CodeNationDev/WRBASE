@@ -7,10 +7,11 @@
     <entity name="Shortcut" representedClassName="Shortcut" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="url" optional="YES" attributeType="String"/>
     </entity>
     <elements>
         <element name="Log" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="Shortcut" positionX="-63" positionY="0" width="128" height="88"/>
+        <element name="Shortcut" positionX="-63" positionY="0" width="128" height="103"/>
     </elements>
 </model>

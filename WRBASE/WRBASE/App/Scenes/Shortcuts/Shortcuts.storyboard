@@ -12,7 +12,7 @@
         <!--Shortcuts View Controller-->
         <scene sceneID="MVL-P1-qvc">
             <objects>
-                <viewController id="7Ew-9j-pIf" customClass="ShortcutsViewController" customModule="WRBASE" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="shortcuts" id="7Ew-9j-pIf" customClass="ShortcutsViewController" customModule="WRBASE" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wFM-99-NBJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

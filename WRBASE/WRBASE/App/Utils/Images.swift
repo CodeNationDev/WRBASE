@@ -16,4 +16,8 @@ extension UIImage {
         UIImage(named: "backAccessory")!
     }
     
+    public static var favorites:UIImage {
+        UIImage(named: "bookmarks")!
+    }
+    
 }

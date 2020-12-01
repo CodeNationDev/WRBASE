@@ -3,7 +3,13 @@ import Foundation
 import UIKit
 import WebKit
 
+public protocol CBKWKDelegate {
+    func urlRequested(url: String)
+}
+
 class CBWebView: WKWebView, WKNavigationDelegate, WKUIDelegate {
+    
+    public var delegate: CBKWKDelegate?
     
     public override init(frame: CGRect, configuration: WKWebViewConfiguration) {
         super.init(frame: frame, configuration: configuration)
@@ -32,6 +38,7 @@ class CBWebView: WKWebView, WKNavigationDelegate, WKUIDelegate {
                 }
                 debugPrint("### EP  \(url!.absoluteString)")
                 LoggerManager.shared.log(message: "Navigation to: \(url!.absoluteString)")
+                delegate?.urlRequested(url: url!.absoluteString)
             }
         }
     }

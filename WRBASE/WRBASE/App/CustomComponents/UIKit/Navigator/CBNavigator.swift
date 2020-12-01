@@ -10,6 +10,8 @@ public class CBNavigator: UIView {
         }
     }
     
+    public var urlRequested: String = ""
+    
     var webView: CBWebView = {
         let webView = CBWebView(frame: .zero)
         webView.translatesAutoresizingMaskIntoConstraints = false
@@ -27,6 +29,7 @@ public class CBNavigator: UIView {
     }
     
     func setupView() {
+        webView.delegate = self
         addSubview(webView)
         NSLayoutConstraint.activate([
             webView.topAnchor.constraint(equalTo: topAnchor),
@@ -34,5 +37,11 @@ public class CBNavigator: UIView {
             webView.bottomAnchor.constraint(equalTo: bottomAnchor),
             webView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
+    }
+}
+
+extension CBNavigator: CBKWKDelegate {
+    public func urlRequested(url: String) {
+        self.urlRequested = url
     }
 }
