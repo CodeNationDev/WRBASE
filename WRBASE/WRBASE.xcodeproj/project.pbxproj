@@ -40,6 +40,8 @@
 		076F3C52256FFEE90023CA42 /* CBKContextualMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076F3C4C256FFEE90023CA42 /* CBKContextualMenuViewController.xib */; };
 		076F3C53256FFEE90023CA42 /* CBKBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3C4D256FFEE90023CA42 /* CBKBaseViewController.swift */; };
 		076F3C54256FFEE90023CA42 /* CBKContextualMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3C4E256FFEE90023CA42 /* CBKContextualMenuViewController.swift */; };
+		077A4D0D2577016800CF4D82 /* CBKDocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A4D0C2577016800CF4D82 /* CBKDocumentManager.swift */; };
+		077A4D132577051600CF4D82 /* UIApplication+ViewCycles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A4D122577051600CF4D82 /* UIApplication+ViewCycles.swift */; };
 		078A4FBA256D31BF00BC9BEC /* WRBASE.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FB7256D31BF00BC9BEC /* WRBASE.xcdatamodeld */; };
 		078A4FBB256D31BF00BC9BEC /* LoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FB9256D31BF00BC9BEC /* LoggerManager.swift */; };
 		078A4FC1256D320500BC9BEC /* UIVIew+RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FC0256D320500BC9BEC /* UIVIew+RoundedView.swift */; };
@@ -113,6 +115,8 @@
 		076F3C4C256FFEE90023CA42 /* CBKContextualMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBKContextualMenuViewController.xib; sourceTree = "<group>"; };
 		076F3C4D256FFEE90023CA42 /* CBKBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBKBaseViewController.swift; sourceTree = "<group>"; };
 		076F3C4E256FFEE90023CA42 /* CBKContextualMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBKContextualMenuViewController.swift; sourceTree = "<group>"; };
+		077A4D0C2577016800CF4D82 /* CBKDocumentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBKDocumentManager.swift; sourceTree = "<group>"; };
+		077A4D122577051600CF4D82 /* UIApplication+ViewCycles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+ViewCycles.swift"; sourceTree = "<group>"; };
 		078A4FB8256D31BF00BC9BEC /* Logger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logger.xcdatamodel; sourceTree = "<group>"; };
 		078A4FB9256D31BF00BC9BEC /* LoggerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerManager.swift; sourceTree = "<group>"; };
 		078A4FC0256D320500BC9BEC /* UIVIew+RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew+RoundedView.swift"; sourceTree = "<group>"; };
@@ -257,6 +261,7 @@
 		0744499F2566C7370088A546 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				077A4D11257704DD00CF4D82 /* Helpers */,
 				07FBC0F72566D5EE00446CFC /* Colors.swift */,
 				074449A02566C74B0088A546 /* ReplaceSegue.swift */,
 				076F3AD6256E58880023CA42 /* Fonts.swift */,
@@ -368,6 +373,22 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		077A4D0B2577014600CF4D82 /* DocumentManager */ = {
+			isa = PBXGroup;
+			children = (
+				077A4D0C2577016800CF4D82 /* CBKDocumentManager.swift */,
+			);
+			path = DocumentManager;
+			sourceTree = "<group>";
+		};
+		077A4D11257704DD00CF4D82 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				077A4D122577051600CF4D82 /* UIApplication+ViewCycles.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		078A4FB6256D31BF00BC9BEC /* Logger */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +460,7 @@
 		07FBC0E62566D3FC00446CFC /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				077A4D0B2577014600CF4D82 /* DocumentManager */,
 				07C2FE542574FE750034BBFF /* TextField */,
 				078FF25825706E9B00DBBA1F /* Buttons */,
 				078FF13B2570696B00DBBA1F /* Labels */,
@@ -648,9 +670,11 @@
 				074FC7912570531800ABC1DE /* ShortcutsDataManager.swift in Sources */,
 				074449A12566C74B0088A546 /* ReplaceSegue.swift in Sources */,
 				076F3C06256E822B0023CA42 /* Images.swift in Sources */,
+				077A4D0D2577016800CF4D82 /* CBKDocumentManager.swift in Sources */,
 				0744499625669BC40088A546 /* Splash.swift in Sources */,
 				078A4FBA256D31BF00BC9BEC /* WRBASE.xcdatamodeld in Sources */,
 				076F3A99256D61F10023CA42 /* CBKNavigationController.swift in Sources */,
+				077A4D132577051600CF4D82 /* UIApplication+ViewCycles.swift in Sources */,
 				074FC7992570624200ABC1DE /* ShortcutSavaBoxViewController.swift in Sources */,
 				076F3C01256E7A100023CA42 /* TitleHeaderNImageCell.swift in Sources */,
 				07FBC17A2567EB3E00446CFC /* CBNavigator.swift in Sources */,

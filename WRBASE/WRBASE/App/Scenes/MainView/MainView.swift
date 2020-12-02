@@ -10,7 +10,7 @@ enum Destinations: Int {
 class MainView: BaseViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var webView: CBNavigator!
-    public let initialURL: String? = "https://www.google.es"
+    public let initialURL: String? = "https://file-examples.com/index.php/sample-documents-download/"
     
     
     override func viewDidLoad() {

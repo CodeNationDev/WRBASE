@@ -20,11 +20,6 @@ class ShortcutsViewController: BaseViewController, UITableViewDelegate {
         
     }
     
-    override public func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-    }
-    
     func setupTable() {
         tableView.register(TitleHeaderNImageCell.self, forCellReuseIdentifier: "cell")
         tableView.separatorColor = .clear
