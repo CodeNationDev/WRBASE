@@ -43,7 +43,7 @@ class CBWebView: WKWebView, WKNavigationDelegate, WKUIDelegate, UIDocumentIntera
         if let _ = documentViewer {
             self.documentViewer!.delegate = self
         }
-        
+        allowsBackForwardNavigationGestures = true
         addObserver(self, forKeyPath: "URL", options: .new, context: nil)
         addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         navigationDelegate = self
