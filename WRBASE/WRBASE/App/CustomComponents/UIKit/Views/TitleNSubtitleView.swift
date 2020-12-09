@@ -36,8 +36,8 @@ public class TitleNSubtitleView: UIView {
     public func commonInit() {
         let nib = UINib(nibName: "TitleNSubtitleView", bundle: nil)
         nib.instantiate(withOwner: self, options: nil)
-        containerView.frame = bounds
         addSubview(containerView)
+        containerView.translatesAutoresizingMaskIntoConstraints = false
         setupView()
         image.isHidden = true
     }
@@ -46,6 +46,12 @@ public class TitleNSubtitleView: UIView {
         bodyMessage.lineBreakMode = .byTruncatingTail
         bodyMessage.adjustsFontSizeToFitWidth = true
         bodyMessage.minimumScaleFactor = 10.0
+        
+        NSLayoutConstraint.activate([
+            containerView.topAnchor.constraint(equalTo: topAnchor),
+            containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            containerView.trailingAnchor.constraint(equalTo: trailingAnchor)
+        ])
     }
-    
 }

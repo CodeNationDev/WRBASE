@@ -38,11 +38,22 @@
                     <connections>
                         <outlet property="tableView" destination="BVy-sP-UfW" id="yCQ-h3-zta"/>
                         <segue destination="WBZ-j8-Ftq" kind="show" identifier="logs" id="1Lb-nl-CYw"/>
+                        <segue destination="DN1-FR-20T" kind="show" identifier="environments" id="1Vl-bI-AM3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OyY-Ow-tY3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="713.04347826086962" y="26.785714285714285"/>
+        </scene>
+        <!--Environments-->
+        <scene sceneID="iPZ-TD-7vQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Environments" id="DN1-FR-20T" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="22J-hW-CKH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qWH-FH-RPm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1348" y="-103"/>
         </scene>
         <!--Logs-->
         <scene sceneID="n37-t0-zr0">
@@ -52,7 +63,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xtk-VM-R6D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1438" y="27"/>
+            <point key="canvasLocation" x="1308" y="143"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Yl-mQ-9Sd">

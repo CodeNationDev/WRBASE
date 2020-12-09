@@ -3,12 +3,16 @@ import Foundation
 import UIKit
 
 enum ButtonTypeAspect: Int {
-    case lightbox
+    case lightbox, pickerView
 }
 
 class CBKButton: UIButton {
     
-    public var buttonTypeAspect: ButtonTypeAspect = .lightbox
+    public var buttonTypeAspect: ButtonTypeAspect = .lightbox {
+        didSet {
+            setupButton()
+        }
+    }
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,6 +29,10 @@ class CBKButton: UIButton {
         case .lightbox:
             titleLabel!.font = .openSansSemiBold(size: 15.0)
             setTitleColor(.blueCaixa1, for: .normal)
+        case .pickerView:
+            titleLabel!.font = .openSansSemiBold(size: 15.0)
+            setTitleColor(.genericWhite, for: .normal)
+            backgroundColor = .blueCaixa1
         }
     }
     

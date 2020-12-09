@@ -10,13 +10,14 @@ enum Destinations: Int {
 class MainView: BaseViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var webView: CBNavigator!
-    public let initialURL: String? = "https://file-examples.com/index.php/sample-documents-download/"
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-        webView.url = initialURL!
+//        if let url = CoreDataManager.shared.loadParameter(forKey: "wrbase_url")?.first?.value {
+//            webView.url = url
+//        }
+        webView.url = "https://www.caixabank.es/"
         shakeAction = {
             self.launchContextualMenu()
         }

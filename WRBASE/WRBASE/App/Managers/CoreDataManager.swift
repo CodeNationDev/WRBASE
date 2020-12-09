@@ -10,6 +10,11 @@ public struct ShortcutItem {
     var position: Int?
 }
 
+public struct ParameterItem {
+    var key: String?
+    var value: String?
+}
+
 public class CoreDataManager: NSObject {
     public static let shared = CoreDataManager()
     var context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
@@ -68,7 +73,7 @@ public class CoreDataManager: NSObject {
                         item.setValue(position, forKey: "position")
                     }
                     try self.context?.save()
-                completionHandler(true)
+                    completionHandler(true)
                 }
                 
             } catch let error {
@@ -103,13 +108,93 @@ public class CoreDataManager: NSObject {
         do {
             let max = try context!.fetch(fetchRequest)
             return max.count
-                        
+            
         } catch let error as NSError {
             print("[ERROR] Could not fetch. \(error), \(error.userInfo)")
         }
         return nil
     }
     
+    public func saveParameter(forKey: String, value: String, completionHandler: ((Bool)->(Void))? = nil) {
+        DispatchQueue.main.async {
+            let entity = NSEntityDescription.entity(forEntityName: "GenericParams", in: self.context!)!
+            let shortcut = NSManagedObject(entity: entity, insertInto: self.context!)
+            shortcut.setValue(forKey, forKey: "key")
+            shortcut.setValue(value, forKey: "value")
+            
+            do {
+                try self.context?.save()
+                if let completion = completionHandler { completion(true) }
+            } catch let error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    public func loadParameter(forKey: String? = nil) -> [ParameterItem]? {
+        var items:[ParameterItem] = []
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "GenericParams")
+        if let forkey = forKey {
+            let predicate = NSPredicate(format: "key == %@", "\(forkey)")
+            fetchRequest.predicate = predicate
+        }
+        do {
+            let log = try context!.fetch(fetchRequest)
+            log.forEach {
+                if let key = $0.value(forKey: "key") as? String, let value = $0.value(forKey: "value") as? String  {
+                    items.append(ParameterItem(key: key, value: value))
+                }
+            }
+            return items
+        } catch let error as NSError {
+            print("[ERROR] Could not fetch. \(error), \(error.userInfo)")
+        }
+        return nil
+    }
+    
+    public func removeParameter(forKey: String, completionHandler: ((Bool)->(Void))? = nil) {
+        DispatchQueue.main.async {
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "GenericParams")
+            let predicate = NSPredicate(format: "key == %@", "\(forKey)")
+            fetchRequest.predicate = predicate
+            do {
+                let result = try self.context!.fetch(fetchRequest)
+                if let context = self.context, let first = result.first {
+                    context.delete(first)
+                    try context.save()
+                    if let completion = completionHandler {
+                        completion(true)
+                    }
+                } else {
+                    if let completion = completionHandler {
+                        completion(false)
+                    }
+                }
+                
+            } catch let error {
+                LoggerManager.shared.log(message: "[ERROR] Updating parameter: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    public func updateParameter(forKey: String, value: String, completionHandler: ((Bool)->())? = nil) {
+        DispatchQueue.main.async {
+            self.removeParameter(forKey: forKey) { (success) -> () in
+                if success {
+                    self.saveParameter(forKey: forKey, value: value) { (success) -> (Void) in
+                        if success {
+                            if let completion = completionHandler {
+                                completion(true)
+                            }
+                        } else
+                        if let completion = completionHandler {
+                            completion(false)
+                        }
+                    }
+                }
+            }
+        }
+    }
     
 }
 

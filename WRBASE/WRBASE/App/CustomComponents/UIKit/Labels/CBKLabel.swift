@@ -3,12 +3,18 @@ import Foundation
 import UIKit
 
 enum LabelType: Int {
-    case lightboxTitle, lightboxBody
+    case lightboxTitle,
+         lightboxBody,
+         pickerView
 }
 
 class CBKLabel: UILabel {
     
-    var type: LabelType = .lightboxTitle
+    var type: LabelType = .lightboxTitle {
+        didSet {
+            setupLabel()
+        }
+    }
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,6 +35,10 @@ class CBKLabel: UILabel {
         case .lightboxBody:
             font = .openSansRegular(size: 15.0)
             textColor = .textLight
+        
+        case .pickerView:
+            font = .openSansRegular(size: 22)
+            textColor = .genericBlack
         }
     }
     

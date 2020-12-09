@@ -2,16 +2,30 @@
 import Foundation
 import UIKit
 
+
 class AboutViewController: BaseViewController, UITableViewDelegate {
     
+    enum AboutOptions: Int {
+        case logs = 0
+        case environment = 1
+    }
+    
+    var pickerPresented = false
+    let picker = CBKPickerView(items: [(ParamKeys.Environment.Options.pre.rawValue, 0),(ParamKeys.Environment.Options.pro.rawValue, 1)])
+    
     @IBOutlet weak var tableView: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         setupTable()
         setupNavBar()
+        shakeAction = {
+            self.launchContextualMenu()
+        }
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissPicker))
+        tableView.addGestureRecognizer(tapGestureRecognizer)
     }
     
     func setupTable() {
@@ -30,21 +44,6 @@ class AboutViewController: BaseViewController, UITableViewDelegate {
         
         leftAccessory.tintColor = .genericWhite
         navigationItem.setLeftBarButton(leftAccessory, animated: false)
-
-        //TODO: Remove this code, this page hasn't rightButtonItem ONLY FOR TEST.
-        let button = UIButton(type: .system)
-        let buttonImage = UIImage.message.withRenderingMode(.alwaysTemplate)
-        button.setImage(buttonImage, for: .normal)
-        button.addTarget(self, action: #selector(rightButtonAction), for: .touchUpInside)
-        button.tintColor = .genericWhite
-
-        let menuBarItem = UIBarButtonItem(customView: button)
-        menuBarItem.customView?.translatesAutoresizingMaskIntoConstraints = false
-        menuBarItem.customView?.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        menuBarItem.customView?.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        
-        navigationItem.rightBarButtonItem = menuBarItem
-        
     }
     
     @objc func rightButtonAction() {
@@ -54,11 +53,32 @@ class AboutViewController: BaseViewController, UITableViewDelegate {
     @objc func leftButtonAction() {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func launchContextualMenu() {
+        let vc = CBKContextualMenuViewController(menuTitle: "Options", options: [
+            CBKContextualMenuOption(withIcon: "bookmarks", andTitle: "Ver Logs"),
+            CBKContextualMenuOption(withIcon: "about", andTitle: "Cambiar de entorno"),
+        ],
+        delegate: self)
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @objc func dismissPicker(sender: UISwipeGestureRecognizer) {
+        if(pickerPresented) {
+            UIView.transition(with: self.view, duration: 0.25, options: [.transitionCrossDissolve], animations: {
+                self.picker.removeFromSuperview()
+                self.pickerPresented = false
+            }, completion: nil)
+        }
+    }
 }
+
 
 extension AboutViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -77,9 +97,86 @@ extension AboutViewController: UITableViewDataSource {
             cell.mainView.header.text = "Detalles Tecnicos"
             cell.mainView.bodyMessage.text = "adam.ios.mca:MCAACE:1.20.1230 \nadam.ios.mca:MCAACE:1.20.1230 \nVersión de Firebase: 17.2.0 \nVersión de Crashlytics: 2.10.1"
         }
+        if indexPath.row == 3 {
+            cell.mainView.header.text = "Entorno"
+            if let results = CoreDataManager.shared.loadParameter(forKey: ParamKeys.Environment.key), results.first != nil, let value = results.first!.value {
+                cell.mainView.bodyMessage.text = value
+            } else {
+                cell.mainView.bodyMessage.text = "Unknown"
+            }
+            
+        }
+        cell.layoutIfNeeded()
         
         return cell
     }
+}
+
+extension AboutViewController: CBKContextualMenuViewControllerDelegate, CBKPickerViewDelegate {
+    func didSelectOption(item: (String, Int)) {
+        switch ParamKeys.Environment.Options(rawValue: item.0) {
+        case .pre: updateEnvironment(env: .pre)
+        case .pro: updateEnvironment(env: .pro)
+        case .none:
+            LoggerManager.shared.log(message: "Unknown environment selected")
+        }
+    }
     
+    func updateEnvironment(env: ParamKeys.Environment.Options) {
+        if let result = CoreDataManager.shared.loadParameter(forKey: ParamKeys.Environment.key) {
+            if !result.isEmpty {
+                CoreDataManager.shared.updateParameter(forKey: ParamKeys.Environment.key, value: env.rawValue) { (result) in
+                    if result {
+                        UIView.performWithoutAnimation {
+                            self.tableView.beginUpdates()
+                            self.tableView.reloadData()
+                            self.tableView.endUpdates()
+                        }
+                    }
+                }
+            } else {
+                CoreDataManager.shared.saveParameter(forKey: ParamKeys.Environment.key, value: env.rawValue) { (result) -> (Void) in
+                    if result {
+                        UIView.performWithoutAnimation {
+                            self.tableView.beginUpdates()
+                            self.tableView.reloadData()
+                            self.tableView.endUpdates()
+                        }
+                    }
+                }
+            }
+        }
+    }
     
+    func pressed(option: Int) {
+        switch AboutOptions(rawValue: option) {
+        case .logs: performSegue(withIdentifier: "logs", sender: nil)
+        case .environment:
+            picker.cbkDelegate = self
+            picker.translatesAutoresizingMaskIntoConstraints = false
+            UIView.transition(with: self.view, duration: 0.25, options: [.transitionCrossDissolve], animations: {
+                self.view.addSubview(self.picker)
+                self.pickerPresented = true
+            }, completion: nil)
+            NSLayoutConstraint.activate([
+                picker.widthAnchor.constraint(equalToConstant: view.frame.width),
+                picker.heightAnchor.constraint(equalToConstant: 300),
+                picker.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+                picker.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            ])
+            view.bringSubviewToFront(picker)
+            view.sendSubviewToBack(tableView)
+            
+            if let results = CoreDataManager.shared.loadParameter(forKey: ParamKeys.Environment.key), results.first != nil, let value = results.first!.value {
+                switch ParamKeys.Environment.Options(rawValue: value) {
+                case .pre: self.picker.selectRow(0, inComponent: 0, animated: true)
+                case .pro: self.picker.selectRow(1, inComponent: 0, animated: true)
+                case .none: break
+                }
+            }
+            
+        case .none:
+            print("None selection option pressed")
+        }
+    }
 }

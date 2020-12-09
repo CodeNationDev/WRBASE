@@ -17,10 +17,16 @@ public class TitleHeaderNImageCell: UITableViewCell {
         return view
     }()
     
+    public override func prepareForReuse() {
+        super.prepareForReuse()
+        mainView.image.image = nil
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
     }
+    
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
