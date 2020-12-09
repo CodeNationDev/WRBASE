@@ -14,9 +14,9 @@ class MainView: BaseViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-//        if let url = CoreDataManager.shared.loadParameter(forKey: "wrbase_url")?.first?.value {
-//            webView.url = url
-//        }
+        //        if let url = CoreDataManager.shared.loadParameter(forKey: "wrbase_url")?.first?.value {
+        //            webView.url = url
+        //        }
         webView.url = "https://www.caixabank.es/"
         shakeAction = {
             self.launchContextualMenu()
@@ -36,23 +36,29 @@ class MainView: BaseViewController, UIGestureRecognizerDelegate {
     
     @objc func nameLongPressed(sender: UISwipeGestureRecognizer) {
         if sender.state == .began {
-            let vc = ShortcutSavaBoxViewController(nibName: "ShortcutSavaBoxViewController", bundle: .main)
+            let vc = ShortcutSavaBoxViewController()
             vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .overFullScreen
+            vc.modalPresentationStyle = .overCurrentContext
+            present(vc, animated: true, completion: nil)
             vc.imageIcon = .favorites
             vc.titleLabelText = "Add new shortcut"
             vc.bodyLabelText = webView.url
-            vc.buttonTitle = "Ok"
-            vc.actionTarget = {
+            vc.button1Title = "Ok"
+            vc.actionButton1Target = {
                 CoreDataManager.shared.saveShortcut(name: vc.shortcutName, url: self.webView.urlRequested) { (result) -> (Void) in
                     if result {
                         print("SUCCESSSSSS!!!!")
-                        vc.bodyLabel.text = "Success, shortcut saved"
+                        vc.bodyLabelText = "Success, shortcut saved"
                         vc.txShortcutName.isEnabled = false
+                        vc.button1.isHidden = true
+                        vc.button2Title = "Close"
                     }
                 }
             }
-            present(vc, animated: true, completion: nil)
+            vc.button2Title = "Cancel"
+            vc.actionButton2Target = {
+                vc.dismiss(animated: true, completion: nil)
+            }
         }
     }
     

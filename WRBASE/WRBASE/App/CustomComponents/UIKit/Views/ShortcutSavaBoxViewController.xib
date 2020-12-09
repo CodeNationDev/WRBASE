@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,7 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShortcutSavaBoxViewController" customModule="WRBASE" customModuleProvider="target">
             <connections>
                 <outlet property="bodyLabel" destination="pf0-MP-Rks" id="ahf-2x-fTt"/>
-                <outlet property="button" destination="Gph-NY-36W" id="CR4-w7-fDJ"/>
+                <outlet property="button1" destination="Gph-NY-36W" id="CR4-w7-fDJ"/>
+                <outlet property="button2" destination="YUK-eT-Uh2" id="OqU-16-IBQ"/>
                 <outlet property="card" destination="Obg-UX-41y" id="stl-gu-Hwq"/>
                 <outlet property="container" destination="iN0-l3-epB" id="j9I-h2-vmL"/>
                 <outlet property="image" destination="sIg-zr-ZPI" id="82D-NP-A3a"/>
@@ -23,7 +23,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view opaque="NO" contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -57,18 +57,18 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="fYz-E4-J7w">
-                            <rect key="frame" x="38.5" y="284" width="223" height="20"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fYz-E4-J7w">
+                            <rect key="frame" x="38.5" y="274" width="223" height="20"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gph-NY-36W" customClass="CBKButton" customModule="WRBASE" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="111.5" height="20"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="223" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="8fA-uO-Vul"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUK-eT-Uh2" customClass="CBKButton" customModule="WRBASE" customModuleProvider="target">
-                                    <rect key="frame" x="111.5" y="0.0" width="111.5" height="20"/>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUK-eT-Uh2" customClass="CBKButton" customModule="WRBASE" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="20"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="20" id="6P2-Fu-wrz"/>
                                     </constraints>
@@ -93,9 +93,11 @@
                         <constraint firstItem="smh-2m-fhF" firstAttribute="top" secondItem="pf0-MP-Rks" secondAttribute="bottom" constant="10" id="11i-sE-t6m"/>
                         <constraint firstItem="7AW-nY-EJK" firstAttribute="top" secondItem="sIg-zr-ZPI" secondAttribute="bottom" constant="28" id="A16-nM-g5k"/>
                         <constraint firstItem="sIg-zr-ZPI" firstAttribute="centerX" secondItem="Obg-UX-41y" secondAttribute="centerX" id="DNz-FI-u1V"/>
+                        <constraint firstItem="fYz-E4-J7w" firstAttribute="top" secondItem="smh-2m-fhF" secondAttribute="bottom" constant="20" id="I8q-2M-Bej"/>
                         <constraint firstAttribute="height" constant="319" id="Ufx-fe-VIs"/>
                         <constraint firstItem="smh-2m-fhF" firstAttribute="centerX" secondItem="Obg-UX-41y" secondAttribute="centerX" id="czj-WP-ejU"/>
                         <constraint firstItem="pf0-MP-Rks" firstAttribute="centerX" secondItem="Obg-UX-41y" secondAttribute="centerX" id="dOE-ec-9vU"/>
+                        <constraint firstItem="fYz-E4-J7w" firstAttribute="centerX" secondItem="Obg-UX-41y" secondAttribute="centerX" id="jru-Ig-MEb"/>
                         <constraint firstItem="pf0-MP-Rks" firstAttribute="centerX" secondItem="Obg-UX-41y" secondAttribute="centerX" id="n1a-S7-Yvm"/>
                         <constraint firstItem="7AW-nY-EJK" firstAttribute="centerX" secondItem="Obg-UX-41y" secondAttribute="centerX" id="tKb-a5-hFA"/>
                         <constraint firstAttribute="width" constant="300" id="vGZ-HO-1vR"/>
@@ -105,7 +107,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" name="LightBoxBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Obg-UX-41y" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="OLK-Ry-GLe"/>
                 <constraint firstItem="Obg-UX-41y" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mue-v6-c8B"/>
@@ -114,9 +116,6 @@
         </view>
     </objects>
     <resources>
-        <namedColor name="LightBoxBackgroundColor">
-            <color red="0.0" green="0.0" blue="0.058823529411764705" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

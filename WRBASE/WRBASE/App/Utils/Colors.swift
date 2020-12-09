@@ -13,4 +13,8 @@ extension UIColor {
     public static var textLight = UIColor(named: "TextLight", in: .main, compatibleWith: nil)!
     public static var textDark = UIColor(named: "TextDark", in: .main, compatibleWith: nil)!
     public static var grayCaixa1 = UIColor(named: "GrayCaixa1", in: .main, compatibleWith: nil)!
+    
+    public func lightboxBackgroundcolor (alpha: CGFloat = 0.5 ) -> UIColor {
+        UIColor(red: 0, green: 0, blue: 15, alpha: alpha)
+    }
 }
