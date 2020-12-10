@@ -27,7 +27,7 @@
 //Alerts & Others
 "message_title" = "Missatge";
 "accept_literal" = "Acceptar";
-"cancel_literal" = "Cancellar";
+"cancel_literal" = "Cancel.lar";
 "close_literal" = "Tancar";
 "unknown_state" = "Estat desconegut";
 "mail_error" = "Error a l'enviar el missatge";
