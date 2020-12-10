@@ -76,7 +76,7 @@ open class CBKBaseViewController: UIViewController {
 
     // MARK: - Accessibility
     public func setNavBarAccessibility() {
-        guard let backBtn = self.navigationItem.leftBarButtonItem else { return }
+        guard let _ = self.navigationItem.leftBarButtonItem else { return }
     }
 }
 

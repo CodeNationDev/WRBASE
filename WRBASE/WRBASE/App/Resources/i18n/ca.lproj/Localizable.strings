@@ -1,1 +1,36 @@
-"about_nav_title" = "Acerca de CAT";
+//NavigationBar titles
+"about_nav_title" = "Quant a";
+"environments_nav_title" =  "Canviar d'entorn";
+"shortcuts_nav_title" = "Els meus accessos directes";
+
+//Contextual Menu
+"context_menu_title" = "Opcions";
+"logs_title" = "Veure logs";
+"change_env_title" = "Canviar d'entorn";
+"shortcuts_title" = "Accés directe";
+"about_title" = "Quant a";
+  
+//About View Info
+"app_title" = "Les meves vendes";
+"app_version" = "Versió %@";
+"app_details_title" = "Detalls de la aplicació";
+"app_details_info" = "Aplicació de seguiment d´activitat comercial per empleats.";
+"app_technical_details_title" = "Detalls tècnics";
+"app_technical_details_info" = "adam.ios.mca:MCAACE:1.20.1230 \nadam.ios.mca:MCAACE:1.20.1230 \nVersión de Firebase: 17.2.0 \nVersión de Crashlytics: 2.10.1";
+
+"app_env_title" = "Entorn";
+
+//Main
+"add_shortcut" = "Afegir un nou accés directe";
+"save_shortcut_succeed" = "Accés directe emmagatzemat";
+
+//Alerts & Others
+"message_title" = "Missatge";
+"accept_literal" = "Acceptar";
+"cancel_literal" = "Cancellar";
+"close_literal" = "Tancar";
+"unknown_state" = "Estat desconegut";
+"mail_error" = "Error a l'enviar el missatge";
+"mail_sent" = "Missatge enviat";
+"mail_cancelled" = "Missatge cancel.lat";
+"mail_saved" = "Missatge guardat";

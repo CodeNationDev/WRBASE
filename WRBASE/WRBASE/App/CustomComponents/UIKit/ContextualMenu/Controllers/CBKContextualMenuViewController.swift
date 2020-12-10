@@ -146,9 +146,6 @@ public class CBKContextualMenuViewController: CBKBaseViewController, UITableView
     private func setupAccessibility() {
         self.closeButton.isAccessibilityElement = true
         self.closeButton.accessibilityTraits = UIAccessibilityTraits.button
-        let stringClose = "caixabank_accessibilitat_ios_basics_topbar_accion_cerrar"
-        
-       
     }
 
     private func setMenuHeight() {
@@ -248,7 +245,7 @@ public class CBKContextualMenuViewController: CBKBaseViewController, UITableView
     }
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let checkNetwork: Bool = self.contextualMenuViewControllerDelegate?.isNeedCheckNetwork?(option: indexPath.row) {
+        if let _: Bool = self.contextualMenuViewControllerDelegate?.isNeedCheckNetwork?(option: indexPath.row) {
             endingAnimation(completionAnimation: {
                 self.contextualMenuViewControllerDelegate?.pressed(option: indexPath.row)
             })
