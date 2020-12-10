@@ -5,6 +5,11 @@ import UIKit
 class BaseViewController: UIViewController, UITextFieldDelegate {
     
     var editingFieldX:CGFloat = 0.0
+    var viewID: String? {
+        didSet {
+            LoggerManager.shared.log(message: "[VIEWCYCLE] \(viewID ?? "unknown") loaded")
+        }
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent

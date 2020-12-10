@@ -35,14 +35,13 @@ public class LoggerManager: NSObject {
             let log = try context!.fetch(fetchRequest)
             log.forEach {
                 if let date = $0.value(forKey: "date") as? String, let message = $0.value(forKey: "message") as? String {
-                    print("\(date) - \(message)")
                     items.append(LogItem(date: date, message: message))
                 }
                
             }
             return items
         } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
+            LoggerManager.shared.log(message: "Could not fetch. \(error), \(error.userInfo)")
         }
         return nil
     }
@@ -82,7 +81,7 @@ public class LoggerManager: NSObject {
                 }
             }
         } catch let error {
-            print("Unable to write logs in file due to: \(error.localizedDescription)")
+            LoggerManager.shared.log(message: "Unable to write logs in file due to: \(error.localizedDescription)")
         }
     }
     

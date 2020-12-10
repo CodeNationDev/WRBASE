@@ -34,17 +34,17 @@ extension CBKDocumentManager: URLSessionDownloadDelegate {
             }
             try manager.moveItem(at: urlLocation, to: newLocation)
         } catch let error {
-            print(error.localizedDescription)
-            documentViewerDelegate?.didfinishDownloadWithError("")
+            LoggerManager.shared.log(message: "[DOWNLOAD ERROR] Downloading document: \(error.localizedDescription)")
+            documentViewerDelegate?.didfinishDownloadWithError(error.localizedDescription)
         }
         urlLocation = urlLocation.deletingPathExtension()
-        
         documentViewerDelegate?.didFinishDownloadSuccess(newLocation)
         if let name = name {
             docViewer?.name = name
         }
         DispatchQueue.main.async {
             downloadTask.cancel()
+            LoggerManager.shared.log(message: "[DOWNLOAD] Document download succeed.")
             self.docViewer?.presentPreview(animated: true)
         }
     }
@@ -52,6 +52,7 @@ extension CBKDocumentManager: URLSessionDownloadDelegate {
     public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         if error != nil {
             DispatchQueue.main.async {
+                LoggerManager.shared.log(message: "[DOWNLOAD ERROR] Downloading document: \(error!.localizedDescription)")
                 self.documentViewerDelegate?.didfinishDownloadWithError(error!.localizedDescription)
             }
         }
@@ -64,6 +65,7 @@ extension CBKDocumentManager: URLSessionDownloadDelegate {
                 self.name = name
             }
                 let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
+                LoggerManager.shared.log(message: "[DOWNLOAD] Download start: \(url)")
                 downloadTask = urlSession.downloadTask(with: url)
                 downloadTask?.resume()
             }

@@ -50,7 +50,7 @@ class CBWebView: WKWebView, WKNavigationDelegate, WKUIDelegate, UIDocumentIntera
     }
     
     override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
-        print("Loading...")
+        debugPrint("Loading...")
         
         if keyPath == #keyPath(WKWebView.estimatedProgress) {
             // When page load finishes. Should work on each page reload.
@@ -59,7 +59,7 @@ class CBWebView: WKWebView, WKNavigationDelegate, WKUIDelegate, UIDocumentIntera
                     return
                 }
                 debugPrint("### EP  \(url!.absoluteString)")
-                LoggerManager.shared.log(message: "Navigation to: \(url!.absoluteString)")
+                LoggerManager.shared.log(message: "Navigating to: \(url!.absoluteString)")
                 delegate?.urlRequested(url: url!.absoluteString)
             }
         }

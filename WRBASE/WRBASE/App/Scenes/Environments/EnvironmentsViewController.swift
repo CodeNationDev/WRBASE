@@ -9,8 +9,13 @@ class EnvironmentsViewController: BaseViewController {
         setupNavBar()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewID = "Environments"
+    }
+    
     func setupNavBar() {
-        navigationItem.titleView = NavigationBarTitleView(title: "Cambio de entorno")
+        navigationItem.titleView = NavigationBarTitleView(title: NSLocalizedString("environments_nav_title", comment: ""))
         navigationItem.leftItemsSupplementBackButton = false
         let leftAccessory = UIBarButtonItem(image: UIImage.backAccessory.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(leftButtonAction))
         leftAccessory.tintColor = .genericWhite

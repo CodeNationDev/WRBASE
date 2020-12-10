@@ -95,6 +95,12 @@ public class CBKContextualMenuViewController: CBKBaseViewController, UITableView
 
     override public func viewDidLoad() {
         super.viewDidLoad()
+        
+        let swipeGestureRecognizerUp = UISwipeGestureRecognizer(target: self, action: #selector(closeButtonPressed(_:)))
+        swipeGestureRecognizerUp.direction = .up
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(swipeGestureRecognizerUp)
+        
         self.titleLabel.text = self.menuTitle
 
         if self.menuTitle == "" {
@@ -130,6 +136,7 @@ public class CBKContextualMenuViewController: CBKBaseViewController, UITableView
 
     override public func viewDidAppear(_ animated: Bool) {
         openingAnimation()
+        LoggerManager.shared.log(message: "ContextualMenu opened")
     }
 
     override public func viewDidLayoutSubviews() {
@@ -279,6 +286,7 @@ public class CBKContextualMenuViewController: CBKBaseViewController, UITableView
 
     // MARK: - Actions
     @IBAction func closeButtonPressed(_ sender: UIButton) {
+        LoggerManager.shared.log(message: "ContextualMenu closed")
         endingAnimation(completionAnimation: nil)
     }
 }

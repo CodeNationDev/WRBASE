@@ -30,11 +30,6 @@ public class CBKPickerView: UIPickerView, UIPickerViewDelegate {
         setupView()
     }
     
-    @objc func doneAndDismiss() {
-        print("Done and dismiss")
-    }
-    
-    
     func setupView() {
         backgroundColor = .genericWhite
     }

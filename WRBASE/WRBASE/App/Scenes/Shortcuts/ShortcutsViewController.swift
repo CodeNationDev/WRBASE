@@ -20,6 +20,11 @@ class ShortcutsViewController: BaseViewController, UITableViewDelegate {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewID = "ShortcutsView"
+    }
+    
     func setupTable() {
         tableView.register(TitleHeaderNImageCell.self, forCellReuseIdentifier: "cell")
         tableView.separatorColor = .clear
@@ -32,7 +37,7 @@ class ShortcutsViewController: BaseViewController, UITableViewDelegate {
     }
     
     func setupNavBar() {
-        navigationItem.titleView = NavigationBarTitleView(title: "Mis accesos directos")
+        navigationItem.titleView = NavigationBarTitleView(title: NSLocalizedString("shortcuts_nav_title", comment: ""))
         navigationItem.leftItemsSupplementBackButton = false
         let leftAccessory = UIBarButtonItem(image: UIImage.backAccessory.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(leftButtonAction))
         leftAccessory.tintColor = .genericWhite
@@ -122,7 +127,9 @@ extension ShortcutsViewController: UITableViewDataSource {
         }
         data!.forEach {
             CoreDataManager.shared.updateShortcut(id: $0.id!, position: $0.position!) { (result) -> (Void) in
-                if result { print("SUCCESS UPDATING COREDATA") }
+                if result {
+                    LoggerManager.shared.log(message: "[COREDATA] shortcuts positions (reorder) updated")
+                }
             }
         }
     }

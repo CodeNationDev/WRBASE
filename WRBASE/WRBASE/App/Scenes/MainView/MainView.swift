@@ -30,6 +30,11 @@ class MainView: BaseViewController, UIGestureRecognizerDelegate {
         webView.addGestureRecognizer(nameLongPressRecognizer)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewID = "MainView"
+    }
+    
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
@@ -41,21 +46,22 @@ class MainView: BaseViewController, UIGestureRecognizerDelegate {
             vc.modalPresentationStyle = .overCurrentContext
             present(vc, animated: true, completion: nil)
             vc.imageIcon = .favorites
-            vc.titleLabelText = "Add new shortcut"
+            vc.titleLabelText = NSLocalizedString("add_shortcut", comment: "")
             vc.bodyLabelText = webView.url
-            vc.button1Title = "Ok"
+            vc.button1Title = NSLocalizedString("accept_literal", comment: "")
             vc.actionButton1Target = {
                 CoreDataManager.shared.saveShortcut(name: vc.shortcutName, url: self.webView.urlRequested) { (result) -> (Void) in
                     if result {
-                        print("SUCCESSSSSS!!!!")
-                        vc.bodyLabelText = "Success, shortcut saved"
+                        LoggerManager.shared.log(message: "Shortcut added \(self.webView.url) ")
+                        
+                        vc.bodyLabelText = NSLocalizedString("save_shortcut_succeed", comment: "")
                         vc.txShortcutName.isEnabled = false
                         vc.button1.isHidden = true
-                        vc.button2Title = "Close"
+                        vc.button2Title = NSLocalizedString("close_literal", comment: "")
                     }
                 }
             }
-            vc.button2Title = "Cancel"
+            vc.button2Title = NSLocalizedString("cancel_literal", comment: "")
             vc.actionButton2Target = {
                 vc.dismiss(animated: true, completion: nil)
             }
@@ -86,9 +92,9 @@ extension MainView: CBKContextualMenuViewControllerDelegate {
     
     
     func launchContextualMenu() {
-        let vc = CBKContextualMenuViewController(menuTitle: "Options", options: [
-            CBKContextualMenuOption(withIcon: "bookmarks", andTitle: "Favoritos"),
-            CBKContextualMenuOption(withIcon: "about", andTitle: "Acerca de..."),
+        let vc = CBKContextualMenuViewController(menuTitle: NSLocalizedString("context_menu_title", comment: ""), options: [
+            CBKContextualMenuOption(withIcon: "bookmarks", andTitle: NSLocalizedString("shortcuts_title", comment: "")),
+            CBKContextualMenuOption(withIcon: "about", andTitle: NSLocalizedString("about_title", comment: "")),
         ],
         delegate: self)
         vc.modalTransitionStyle = .crossDissolve

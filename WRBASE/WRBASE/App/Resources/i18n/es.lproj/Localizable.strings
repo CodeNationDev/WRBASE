@@ -1,0 +1,40 @@
+//NavigationBar titles
+"about_nav_title" = "Acerca de";
+"environments_nav_title" =  "Cambio de entorno";
+"shortcuts_nav_title" = "Mis accesos directos";
+
+//Contextual Menu
+"context_menu_title" = "Opciones";
+"logs_title" = "Ver logs";
+"change_env_title" = "Cambiar de entorno";
+"shortcuts_title" = "Accesos directos";
+"about_title" = "Acerca de"; 
+  
+//About View Info
+"app_title" = "Mis Ventas";
+"app_version" = "Versión %@";
+"app_details_title" = "Detalles de la aplicación";
+"app_details_info" = "Aplicación de seguimiento de actividad comercial para empleados.";
+"app_technical_details_title" = "Detalles Tecnicos";
+"app_technical_details_info" = "adam.ios.mca:MCAACE:1.20.1230 \nadam.ios.mca:MCAACE:1.20.1230 \nVersión de Firebase: 17.2.0 \nVersión de Crashlytics: 2.10.1";
+"app_env_title" = "Entorno";
+
+//Main
+"add_shortcut" = "Añadir nuevo acceso directo";
+"save_shortcut_succeed" = "Acceso directo guardado";
+
+
+//Alerts & Others
+"message_title" = "Mensaje";
+"accept_literal" = "Aceptar";
+"cancel_literal" = "Cancelar";
+"close_literal" = "Cerrar";
+"unknown_state" = "Estado desconocido";
+"mail_error" = "Error al enviar el mensaje";
+"mail_sent" = "Mensaje enviado";
+"mail_cancelled" = "Mensaje cancelado";
+"mail_saved" = "Mensaje guardado";
+
+
+
+

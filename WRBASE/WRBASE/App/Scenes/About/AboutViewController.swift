@@ -11,6 +11,7 @@ class AboutViewController: BaseViewController, UITableViewDelegate {
     }
     
     var pickerPresented = false
+    var appVersion: String = "1.0.6"
     let picker = CBKPickerView(items: [(ParamKeys.Environment.Options.pre.rawValue, 0),(ParamKeys.Environment.Options.pro.rawValue, 1)])
     
     @IBOutlet weak var tableView: UITableView!
@@ -28,6 +29,11 @@ class AboutViewController: BaseViewController, UITableViewDelegate {
         tableView.addGestureRecognizer(tapGestureRecognizer)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewID = "AboutView"
+    }
+    
     func setupTable() {
         tableView.register(TitleHeaderNImageCell.self, forCellReuseIdentifier: "cell")
         tableView.separatorColor = .clear
@@ -38,7 +44,7 @@ class AboutViewController: BaseViewController, UITableViewDelegate {
     }
     
     func setupNavBar() {
-        navigationItem.titleView = NavigationBarTitleView(title: "Acerca de")
+        navigationItem.titleView = NavigationBarTitleView(title: NSLocalizedString("about_nav_title", comment: ""))
         navigationItem.leftItemsSupplementBackButton = false
         let leftAccessory = UIBarButtonItem(image: UIImage(named: "backAccessory")!.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(leftButtonAction))
         
@@ -55,9 +61,9 @@ class AboutViewController: BaseViewController, UITableViewDelegate {
     }
     
     func launchContextualMenu() {
-        let vc = CBKContextualMenuViewController(menuTitle: "Options", options: [
-            CBKContextualMenuOption(withIcon: "bookmarks", andTitle: "Ver Logs"),
-            CBKContextualMenuOption(withIcon: "about", andTitle: "Cambiar de entorno"),
+        let vc = CBKContextualMenuViewController(menuTitle: NSLocalizedString("context_menu_title", comment: ""), options: [
+            CBKContextualMenuOption(withIcon: "bookmarks", andTitle: NSLocalizedString("logs_title", comment: "")),
+            CBKContextualMenuOption(withIcon: "about", andTitle: NSLocalizedString("change_env_title", comment: "")),
         ],
         delegate: self)
         vc.modalTransitionStyle = .crossDissolve
@@ -85,20 +91,20 @@ extension AboutViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TitleHeaderNImageCell
         
         if indexPath.row == 0 {
-            cell.mainView.header.text = "Mis Ventas"
-            cell.mainView.bodyMessage.text = "Versión 1.0.6"
+            cell.mainView.header.text = NSLocalizedString("app_title", comment: "")
+            cell.mainView.bodyMessage.text = String(format: NSLocalizedString("app_version", comment: ""), appVersion)
             cell.mainView.img = .ic_launcher
         }
         if indexPath.row == 1 {
-            cell.mainView.header.text = "Detalles de la aplicación"
-            cell.mainView.bodyMessage.text = "Aplicación de seguimiento de actividad comercial para empleados."
+            cell.mainView.header.text = NSLocalizedString("app_details_title", comment: "")
+            cell.mainView.bodyMessage.text = NSLocalizedString("app_details_info", comment: "")
         }
         if indexPath.row == 2 {
-            cell.mainView.header.text = "Detalles Tecnicos"
-            cell.mainView.bodyMessage.text = "adam.ios.mca:MCAACE:1.20.1230 \nadam.ios.mca:MCAACE:1.20.1230 \nVersión de Firebase: 17.2.0 \nVersión de Crashlytics: 2.10.1"
+            cell.mainView.header.text = NSLocalizedString("app_technical_details_title", comment: "")
+            cell.mainView.bodyMessage.text = NSLocalizedString("app_technical_details_info", comment: "")
         }
         if indexPath.row == 3 {
-            cell.mainView.header.text = "Entorno"
+            cell.mainView.header.text = NSLocalizedString("app_env_title", comment: "")
             if let results = CoreDataManager.shared.loadParameter(forKey: ParamKeys.Environment.key), results.first != nil, let value = results.first!.value {
                 cell.mainView.bodyMessage.text = value
             } else {

@@ -20,6 +20,11 @@ class LogsView: BaseViewController, UITableViewDelegate {
         setupTable()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewID = "LogsView"
+    }
+    
     func setupTable() {
         tableView.register(TitleHeaderNImageCell.self, forCellReuseIdentifier: "cell")
         tableView.separatorColor = .clear
@@ -30,7 +35,7 @@ class LogsView: BaseViewController, UITableViewDelegate {
     }
     
     func setupNavBar() {
-        navigationItem.titleView = NavigationBarTitleView(title: "Ver logs")
+        navigationItem.titleView = NavigationBarTitleView(title: NSLocalizedString("logs_title", comment: ""))
         navigationItem.leftItemsSupplementBackButton = false
         let leftAccessory = UIBarButtonItem(image: UIImage.backAccessory.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(leftButtonAction))
         leftAccessory.tintColor = .genericWhite
@@ -71,20 +76,20 @@ class LogsView: BaseViewController, UITableViewDelegate {
         var alert:UIAlertController?
         
         switch mailCase {
-        case .sent: alert = UIAlertController(title: "Mensaje", message: "Mensaje enviado", preferredStyle: .alert)
-            let accept = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
+        case .sent: alert = UIAlertController(title: NSLocalizedString("message_title", comment: ""), message: NSLocalizedString("message_sent", comment: ""), preferredStyle: .alert)
+            let accept = UIAlertAction(title: NSLocalizedString("accept_literal", comment: ""), style: .cancel, handler: nil)
             alert!.addAction(accept)
-        case .cancelled: alert = UIAlertController(title: "Mensaje", message: "Mensaje cancelado", preferredStyle: .alert)
-            let accept = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
+        case .cancelled: alert = UIAlertController(title: NSLocalizedString("message_title", comment: ""), message: NSLocalizedString("mail_cancelled", comment: ""), preferredStyle: .alert)
+            let accept = UIAlertAction(title: NSLocalizedString("accept_literal", comment: ""), style: .cancel, handler: nil)
             alert!.addAction(accept)
-        case .saved: alert = UIAlertController(title: "Mensaje", message: "Mensaje guardado", preferredStyle: .alert)
-            let accept = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
+        case .saved: alert = UIAlertController(title: NSLocalizedString("message_title", comment: ""), message: NSLocalizedString("mail_saved", comment: ""), preferredStyle: .alert)
+            let accept = UIAlertAction(title: NSLocalizedString("accept_literal", comment: ""), style: .cancel, handler: nil)
             alert!.addAction(accept)
-        case .error: alert = UIAlertController(title: "Mensaje", message: "Error al enviar el mensaje", preferredStyle: .alert)
-            let accept = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
+        case .error: alert = UIAlertController(title: NSLocalizedString("message_title", comment: ""), message: NSLocalizedString("mail_error", comment: ""), preferredStyle: .alert)
+            let accept = UIAlertAction(title: NSLocalizedString("accept_literal", comment: ""), style: .cancel, handler: nil)
             alert!.addAction(accept)
-        case .unknown: alert = UIAlertController(title: "Mensaje", message: "Estado desconocido", preferredStyle: .alert)
-            let accept = UIAlertAction(title: "Aceptar", style: .cancel, handler: nil)
+        case .unknown: alert = UIAlertController(title: NSLocalizedString("message_title", comment: ""), message: NSLocalizedString("unknown_state", comment: ""), preferredStyle: .alert)
+            let accept = UIAlertAction(title: NSLocalizedString("accept_literal", comment: ""), style: .cancel, handler: nil)
             alert!.addAction(accept)
         }
         

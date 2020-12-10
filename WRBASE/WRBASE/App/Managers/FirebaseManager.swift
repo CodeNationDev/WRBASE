@@ -17,11 +17,11 @@ public class FirebaseManager {
     public func checkRemoteConfig(completionHandler: (()->(Void))?) {
         remoteConfig.fetch() { status, error in
             if let error = error {
-                print("Got an error fetching remote values \(error)")
+                LoggerManager.shared.log(message: "[FIREBASE] Got an error fetching remote values \(error)")
                 return
             }
             RemoteConfig.remoteConfig().activate(completion: nil)
-            print("Retrieved values from the cloud!")
+            LoggerManager.shared.log(message: "[FIREBASE] Retrieved values from the cloud!")
         }
     }
     

@@ -50,7 +50,7 @@ public class CoreDataManager: NSObject {
             }
             return items
         } catch let error as NSError {
-            print("[ERROR] Could not fetch. \(error), \(error.userInfo)")
+            LoggerManager.shared.log(message: "[ERROR] Could not fetch. \(error), \(error.userInfo)")
         }
         return nil
     }
@@ -110,7 +110,7 @@ public class CoreDataManager: NSObject {
             return max.count
             
         } catch let error as NSError {
-            print("[ERROR] Could not fetch. \(error), \(error.userInfo)")
+            LoggerManager.shared.log(message: "[ERROR] Could not fetch. \(error), \(error.userInfo)")
         }
         return nil
     }
@@ -147,7 +147,7 @@ public class CoreDataManager: NSObject {
             }
             return items
         } catch let error as NSError {
-            print("[ERROR] Could not fetch. \(error), \(error.userInfo)")
+            LoggerManager.shared.log(message: "[ERROR] Could not fetch. \(error), \(error.userInfo)")
         }
         return nil
     }

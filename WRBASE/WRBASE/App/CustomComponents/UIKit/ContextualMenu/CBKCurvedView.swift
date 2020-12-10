@@ -11,7 +11,7 @@ import UIKit
 
 @IBDesignable public class CBKCurvedView: UIView {
 
-    private let cbkBlue = UIColor(named: "BlueCaixa1")!
+    private let cbkBlue:UIColor = .blueCaixa1
     private var curvedLayer: CAShapeLayer?
 
     override init(frame: CGRect) {

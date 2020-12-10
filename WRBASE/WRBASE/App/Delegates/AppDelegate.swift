@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let container = NSPersistentContainer(name: "WRBASE")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-       
+                LoggerManager.shared.log(message: "[COREDATA ERROR] Unresolved error \(error), \(error.userInfo)")
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 try context.save()
             } catch {
                 let nserror = error as NSError
+                LoggerManager.shared.log(message: "[COREDATA ERROR] Unresolved error saving in context \(nserror), \(nserror.userInfo)")
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
