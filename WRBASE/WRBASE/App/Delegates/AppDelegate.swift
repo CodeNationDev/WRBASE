@@ -3,15 +3,55 @@ import UIKit
 import CoreData
 import Firebase
 
+enum QuickActions: String {
+    case about = "com.app.shortcut.about"
+    case shortcuts = "com.app.shortcut.shortcuts"
+}
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+    var shortcutItemToProcess: UIApplicationShortcutItem?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         let _ = FirebaseManager.shared
+        
+        if let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+            shortcutItemToProcess = shortcutItem
+        }
+        
         return true
     }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        
+        if let shortcutItem = shortcutItemToProcess {
+            switch QuickActions(rawValue: shortcutItem.type) {
+            case .about: router(name: "About")
+            case .shortcuts: router(name: "Shortcuts")
+            case .none: break
+            }
+        }
+        shortcutItemToProcess = nil
+    }
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        shortcutItemToProcess = shortcutItem
+    }
+    
+    func router(name: String) {
+        let navigationController = UIStoryboard(name: name, bundle: .main).instantiateInitialViewController()
+        if let nc = navigationController as? CBKNavigationController {
+            nc.modalPresentationStyle = .fullScreen
+            if let _ = nc.viewControllers.first as? ShortcutsViewController {
+                (nc.viewControllers.first as! ShortcutsViewController).delegate = window?.rootViewController as? ShortcutsDelegate
+            }
+            window!.rootViewController?.present(nc, animated: true, completion: nil)
+        }
+    }
+
     
     // MARK: - Core Data stack
 

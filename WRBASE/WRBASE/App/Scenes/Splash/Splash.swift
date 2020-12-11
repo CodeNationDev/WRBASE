@@ -2,7 +2,7 @@
 import Foundation
 import UIKit
 
-class Splash: UIViewController {
+class Splash: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

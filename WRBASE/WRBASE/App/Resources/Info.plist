@@ -34,6 +34,25 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>Splash</string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>bookmarks</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Accesos Directos</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.app.shortcut.shortcuts</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>about</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Acerca de</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.app.shortcut.about</string>
+		</dict>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Splash</string>
 	<key>UIRequiredDeviceCapabilities</key>

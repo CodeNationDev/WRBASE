@@ -2,7 +2,7 @@
 import Foundation
 import UIKit
 
-public protocol ShortcutsDelegate {
+@objc public protocol ShortcutsDelegate {
     func shortcutNavigationTo(url: URL)
 }
 
@@ -58,6 +58,11 @@ extension ShortcutsViewController: UITableViewDataSource {
             delegate.shortcutNavigationTo(url: URL(string: data![indexPath.row].url!)!)
             dismiss(animated: true, completion: nil)
         }
+//        else {
+//            let mainVC = UIStoryboard(name: "MainView", bundle: .main).instantiateInitialViewController() as! MainView
+//            mainVC.webView.url = data![indexPath.row].url!
+//            navigationController?.pushViewController(mainVC, animated: true)
+//        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

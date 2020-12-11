@@ -39,6 +39,10 @@ class MainView: BaseViewController, UIGestureRecognizerDelegate {
         return true
     }
     
+    @objc func navigate(url: String) {
+        webView.url = url
+    }
+    
     @objc func nameLongPressed(sender: UISwipeGestureRecognizer) {
         if sender.state == .began {
             let vc = ShortcutSavaBoxViewController()
