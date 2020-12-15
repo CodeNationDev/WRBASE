@@ -4,8 +4,15 @@ import UIKit
 import WebKit
 
 public protocol CBKWKDelegate {
-    func urlRequested(url: String)
+     func urlRequested(url: String)
+     func downloadTask(forResult: Bool)
 }
+extension CBKWKDelegate {
+    func urlRequested(url: String){}
+    public func downloadTask(forResult: Bool){}
+}
+
+
 
 enum MimeType: String {
     case pdf = "application/pdf"
@@ -21,11 +28,13 @@ enum MimeType: String {
     case html = "text/html"
 }
 
+
 class CBWebView: WKWebView, WKNavigationDelegate, WKUIDelegate, UIDocumentInteractionControllerDelegate, CBKDocumentManagerDelegate {
-     
+
     public var delegate: CBKWKDelegate?
     var documentViewer: UIDocumentInteractionController?
     var documentManager: CBKDocumentManager?
+    var userController:WKUserContentController = WKUserContentController()
     
     public override init(frame: CGRect, configuration: WKWebViewConfiguration) {
         super.init(frame: frame, configuration: configuration)
@@ -46,6 +55,7 @@ class CBWebView: WKWebView, WKNavigationDelegate, WKUIDelegate, UIDocumentIntera
         allowsBackForwardNavigationGestures = true
         addObserver(self, forKeyPath: "URL", options: .new, context: nil)
         addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
+        configuration.userContentController.add(self, name: "callbackHandler")
         navigationDelegate = self
     }
     
@@ -76,8 +86,16 @@ class CBWebView: WKWebView, WKNavigationDelegate, WKUIDelegate, UIDocumentIntera
         }
     }
     
+    public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        //Pending
+    }
+    public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        //Pending
+    }
+    
+    
     func didfinishDownloadWithError(_ response: String) {
-        
+        //Pending
     }
     
     func didFinishDownloadSuccess(_ url: URL) {
@@ -92,6 +110,15 @@ class CBWebView: WKWebView, WKNavigationDelegate, WKUIDelegate, UIDocumentIntera
     }
     
 }
+
+extension CBWebView: WKScriptMessageHandler {
+    
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        print(message.body)
+    }
+}
+
+
 
 internal extension String {
     /**

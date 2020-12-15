@@ -20,6 +20,7 @@
 		074FC7992570624200ABC1DE /* ShortcutSavaBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074FC7982570624200ABC1DE /* ShortcutSavaBoxViewController.swift */; };
 		074FC7A12570625000ABC1DE /* ShortcutSavaBoxViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 074FC7A02570625000ABC1DE /* ShortcutSavaBoxViewController.xib */; };
 		074FC7A62570645800ABC1DE /* LightboxCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074FC7A52570645800ABC1DE /* LightboxCardView.swift */; };
+		07676CCD258789F300591F5A /* JSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07676CCC258789F300591F5A /* JSManager.swift */; };
 		076F3A8B256D5DF20023CA42 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 076F3A8A256D5DF20023CA42 /* About.storyboard */; };
 		076F3A93256D5E050023CA42 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3A92256D5E050023CA42 /* AboutViewController.swift */; };
 		076F3A99256D61F10023CA42 /* CBKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F3A98256D61F10023CA42 /* CBKNavigationController.swift */; };
@@ -68,6 +69,7 @@
 		07A42D652581682500E27DF5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07A42D672581682500E27DF5 /* Localizable.strings */; };
 		07C2FE572574FE760034BBFF /* CBKBaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C2FE552574FE750034BBFF /* CBKBaseTextField.swift */; };
 		07C2FE582574FE760034BBFF /* CBKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C2FE562574FE750034BBFF /* CBKTextField.swift */; };
+		07C8A65D2588DA2E0015AE08 /* sampleloginweb.html in Resources */ = {isa = PBXBuildFile; fileRef = 07C8A65C2588DA2E0015AE08 /* sampleloginweb.html */; };
 		07EE162F257934E40003F565 /* ParamKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EE162E257934E40003F565 /* ParamKeys.swift */; };
 		07FBC0E82566D40E00446CFC /* BsseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC0E72566D40E00446CFC /* BsseViewController.swift */; };
 		07FBC0F82566D5EE00446CFC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC0F72566D5EE00446CFC /* Colors.swift */; };
@@ -115,6 +117,7 @@
 		074FC7982570624200ABC1DE /* ShortcutSavaBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutSavaBoxViewController.swift; sourceTree = "<group>"; };
 		074FC7A02570625000ABC1DE /* ShortcutSavaBoxViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShortcutSavaBoxViewController.xib; sourceTree = "<group>"; };
 		074FC7A52570645800ABC1DE /* LightboxCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightboxCardView.swift; sourceTree = "<group>"; };
+		07676CCC258789F300591F5A /* JSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSManager.swift; sourceTree = "<group>"; };
 		076F3A8A256D5DF20023CA42 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		076F3A92256D5E050023CA42 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		076F3A98256D61F10023CA42 /* CBKNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBKNavigationController.swift; sourceTree = "<group>"; };
@@ -149,6 +152,7 @@
 		07A42D6B2581684100E27DF5 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/Localizable.strings; sourceTree = "<group>"; };
 		07C2FE552574FE750034BBFF /* CBKBaseTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBKBaseTextField.swift; sourceTree = "<group>"; };
 		07C2FE562574FE750034BBFF /* CBKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBKTextField.swift; sourceTree = "<group>"; };
+		07C8A65C2588DA2E0015AE08 /* sampleloginweb.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = sampleloginweb.html; sourceTree = "<group>"; };
 		07EE162E257934E40003F565 /* ParamKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParamKeys.swift; sourceTree = "<group>"; };
 		07FBC0E72566D40E00446CFC /* BsseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BsseViewController.swift; sourceTree = "<group>"; };
 		07FBC0F72566D5EE00446CFC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -283,6 +287,7 @@
 		0744498E256698BC0088A546 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				07C8A65C2588DA2E0015AE08 /* sampleloginweb.html */,
 				07A42D582581667700E27DF5 /* i18n */,
 				077A4E4F2577E54000CF4D82 /* GoogleService-Info.plist */,
 				076F3AC3256DBDCB0023CA42 /* Fonts */,
@@ -566,6 +571,7 @@
 				07FBC1702567E47700446CFC /* FirebaseManager.swift */,
 				074FC7902570531800ABC1DE /* CoreDataManager.swift */,
 				07EE162E257934E40003F565 /* ParamKeys.swift */,
+				07676CCC258789F300591F5A /* JSManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -716,6 +722,7 @@
 				07A42D652581682500E27DF5 /* Localizable.strings in Resources */,
 				0744499125669BB80088A546 /* Splash.storyboard in Resources */,
 				077A4E502577E54000CF4D82 /* GoogleService-Info.plist in Resources */,
+				07C8A65D2588DA2E0015AE08 /* sampleloginweb.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,6 +753,7 @@
 				07444943256688230088A546 /* AppDelegate.swift in Sources */,
 				07FBC1022566D78C00446CFC /* MainView.swift in Sources */,
 				07FBC0F82566D5EE00446CFC /* Colors.swift in Sources */,
+				07676CCD258789F300591F5A /* JSManager.swift in Sources */,
 				077A4E642578046700CF4D82 /* EnvironmentsViewController.swift in Sources */,
 				07C2FE572574FE760034BBFF /* CBKBaseTextField.swift in Sources */,
 				078FF25A25706EB600DBBA1F /* CBKButton.swift in Sources */,
@@ -947,15 +955,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8LYY6BZ69B;
+				DEVELOPMENT_TEAM = 326NE3RM2J;
 				INFOPLIST_FILE = WRBASE/App/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.caixabank.adam.wrbaseios;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.caixabank.adam.wrbaseios.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -966,15 +977,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8LYY6BZ69B;
+				DEVELOPMENT_TEAM = 326NE3RM2J;
 				INFOPLIST_FILE = WRBASE/App/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.caixabank.adam.wrbaseios;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.caixabank.adam.wrbaseios.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

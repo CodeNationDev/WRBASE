@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HybridWebBridge</title>
+    </head>
+    <body style="zoom: 200%;">
+        <div id="loginForm"  class="container" style="margin: 0 auto;
+        width: 400px;
+        padding: 1em;
+        border: 1px solid #CCC;
+        border-radius: 1em;
+        margin-top: 10em;">
+        <h1 style="color: #00A5E6;">My Awesome LogIn Simulator</h1>
+            <button id="btnLogin">Login!</button>
+        </div>
+        
+        <script>
+            document.getElementById('btnLogin');button.addEventListener('click', function() {varmessageToPost = {'ButtonId':'btnLogin'};window.webkit.messageHandlers.callbackHandler.postMessage(messageToPost);},false);
+        </script>
+        
+    </body>
+</html>

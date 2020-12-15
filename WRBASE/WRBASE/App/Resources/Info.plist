@@ -30,10 +30,6 @@
 		<string>OpenSans-SemiBold.ttf</string>
 		<string>OpenSans-Regular.ttf</string>
 	</array>
-	<key>UIApplicationSupportsIndirectInputEvents</key>
-	<true/>
-	<key>UILaunchStoryboardName</key>
-	<string>Splash</string>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
@@ -53,6 +49,10 @@
 			<string>com.app.shortcut.about</string>
 		</dict>
 	</array>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>Splash</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Splash</string>
 	<key>UIRequiredDeviceCapabilities</key>

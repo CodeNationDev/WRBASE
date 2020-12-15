@@ -17,7 +17,8 @@ class MainView: BaseViewController, UIGestureRecognizerDelegate {
         //        if let url = CoreDataManager.shared.loadParameter(forKey: "wrbase_url")?.first?.value {
         //            webView.url = url
         //        }
-        webView.url = "https://www.caixabank.es/"
+        let localURL = Bundle.main.url(forResource: "sampleloginweb", withExtension: "html")
+        webView.url = localURL!.absoluteString
         shakeAction = {
             self.launchContextualMenu()
         }
