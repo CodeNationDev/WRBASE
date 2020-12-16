@@ -14,7 +14,7 @@ class MainView: BaseViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-        if let url = CoreDataManager.shared.loadParameter(forKey: ParamKeys.RemoteConfig.Options.url_base_dev.rawValue)?.first?.value {
+        if let url = CoreDataManager.shared.loadParameter(forKey: ParamKeys.RemoteConfig.Options.url_base.rawValue)?.first?.value {
                     webView.url = url
                 }
         

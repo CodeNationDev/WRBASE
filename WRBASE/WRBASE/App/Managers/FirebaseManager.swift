@@ -42,6 +42,8 @@ public class FirebaseManager {
                     CoreDataManager.shared.removeParameter(forKey: $0)
                 }
                 CoreDataManager.shared.saveParameter(forKey: $0, value: value, completionHandler: nil)
+                LoggerManager.shared.log(message: "RemoteConfig value \($0):\(value) saved")
+                print( "RemoteConfig value \($0):\(value) saved")
             }
         }
     }
