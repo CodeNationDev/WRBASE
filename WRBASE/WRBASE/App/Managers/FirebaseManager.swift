@@ -14,6 +14,10 @@ public class FirebaseManager {
         checkRemoteConfig(completionHandler: nil)
     }
     
+    public func track_event(name: String, parameters: [String : Any]?) {
+        Firebase.Analytics.logEvent(name, parameters: parameters)
+    }
+    
     public func checkRemoteConfig(completionHandler: (()->(Void))?) {
         remoteConfig.fetch() { status, error in
             if let error = error {
@@ -30,12 +34,15 @@ public class FirebaseManager {
     }
     
     public func retrieveAllCloudParameters() {
-        let params = remoteConfig.allKeys(from: RemoteConfigSource.remote)
-        params.forEach {
+        remoteConfig.allKeys(from: RemoteConfigSource.remote).filter { (flag) -> Bool in
+            return flag.contains("ios_")
+        }.forEach {
             if let value = retrieveParameterValue(forKey: $0) {
+                if let _ = CoreDataManager.shared.loadParameter(forKey: $0) {
+                    CoreDataManager.shared.removeParameter(forKey: $0)
+                }
                 CoreDataManager.shared.saveParameter(forKey: $0, value: value, completionHandler: nil)
             }
         }
     }
-    
 }

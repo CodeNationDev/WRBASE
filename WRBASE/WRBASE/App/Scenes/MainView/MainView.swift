@@ -14,11 +14,14 @@ class MainView: BaseViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-        //        if let url = CoreDataManager.shared.loadParameter(forKey: "wrbase_url")?.first?.value {
-        //            webView.url = url
-        //        }
-        let localURL = Bundle.main.url(forResource: "sampleloginweb", withExtension: "html")
-        webView.url = localURL!.absoluteString
+        if let url = CoreDataManager.shared.loadParameter(forKey: ParamKeys.RemoteConfig.Options.url_base_dev.rawValue)?.first?.value {
+                    webView.url = url
+                }
+        
+        //FOR TESTING
+//        let localURL = Bundle.main.url(forResource: "sampleloginweb", withExtension: "html")
+//        webView.url = localURL!.absoluteString
+        
         shakeAction = {
             self.launchContextualMenu()
         }
