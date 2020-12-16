@@ -61,6 +61,7 @@
 		077A4E5F2578045200CF4D82 /* Environments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 077A4E5E2578045200CF4D82 /* Environments.storyboard */; };
 		077A4E642578046700CF4D82 /* EnvironmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A4E632578046700CF4D82 /* EnvironmentsViewController.swift */; };
 		077A4E6D25783E6100CF4D82 /* CBKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077A4E6C25783E6100CF4D82 /* CBKPickerView.swift */; };
+		077EBE66258A156A00AE53F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 077EBE68258A156A00AE53F4 /* InfoPlist.strings */; };
 		078A4FBA256D31BF00BC9BEC /* WRBASE.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FB7256D31BF00BC9BEC /* WRBASE.xcdatamodeld */; };
 		078A4FBB256D31BF00BC9BEC /* LoggerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FB9256D31BF00BC9BEC /* LoggerManager.swift */; };
 		078A4FC1256D320500BC9BEC /* UIVIew+RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078A4FC0256D320500BC9BEC /* UIVIew+RoundedView.swift */; };
@@ -143,6 +144,7 @@
 		077A4E5E2578045200CF4D82 /* Environments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Environments.storyboard; sourceTree = "<group>"; };
 		077A4E632578046700CF4D82 /* EnvironmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentsViewController.swift; sourceTree = "<group>"; };
 		077A4E6C25783E6100CF4D82 /* CBKPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBKPickerView.swift; sourceTree = "<group>"; };
+		077EBE6C258A156D00AE53F4 /* ca */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ca; path = ca.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		078A4FB8256D31BF00BC9BEC /* Logger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Logger.xcdatamodel; sourceTree = "<group>"; };
 		078A4FB9256D31BF00BC9BEC /* LoggerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerManager.swift; sourceTree = "<group>"; };
 		078A4FC0256D320500BC9BEC /* UIVIew+RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVIew+RoundedView.swift"; sourceTree = "<group>"; };
@@ -498,6 +500,7 @@
 			isa = PBXGroup;
 			children = (
 				07A42D672581682500E27DF5 /* Localizable.strings */,
+				077EBE68258A156A00AE53F4 /* InfoPlist.strings */,
 			);
 			path = i18n;
 			sourceTree = "<group>";
@@ -712,6 +715,7 @@
 				076F3C51256FFEE90023CA42 /* CBKContextualMenuOptionCell.xib in Resources */,
 				076F3A8B256D5DF20023CA42 /* About.storyboard in Resources */,
 				0744494C256688260088A546 /* Assets.xcassets in Resources */,
+				077EBE66258A156A00AE53F4 /* InfoPlist.strings in Resources */,
 				074FC7A12570625000ABC1DE /* ShortcutSavaBoxViewController.xib in Resources */,
 				076F3ACF256DC7A20023CA42 /* OpenSans-Regular.ttf in Resources */,
 				07FBC0FD2566D77800446CFC /* MainView.storyboard in Resources */,
@@ -820,6 +824,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		077EBE68258A156A00AE53F4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				077EBE6C258A156D00AE53F4 /* ca */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		07A42D672581682500E27DF5 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
