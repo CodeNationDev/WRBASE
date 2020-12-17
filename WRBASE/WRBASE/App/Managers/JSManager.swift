@@ -7,16 +7,16 @@ class JSManager: NSObject {
     public static let shared = JSManager()
     
     private var jsFunction:String  =
-                "javascript:(function() { " +
-                        "  let btn = document.getElementById('loginbtn');\n" +
-                        "  let u = document.getElementById('username-input');" +
-                        "  let p = document.getElementById('password-input');" +
-                        "  btn.addEventListener('click', function(ev){\n" +
-                        "    Android.saveUser(u.value);\n" +
-                        "    Android.savePassword(p.value);\n" +
-                        "  });\n" +
-                        "})()"
+                """
+                          let btn = document.getElementById('btnLogin');
+                          let u = document.getElementById('username-input');
+                          let p = document.getElementById('password-input');
+                          btn.addEventListener('click', function(){
+                            webkit.messageHandlers.callbackHandler.postMessage(JSON.stringify({"user":u.value, "pass":p.value}));
+                          });
+                """
     
+//    "webkit.messageHandlers.callbackHandler.postMessage(JSON.stringify({u.value:p.value}));"
     
     private var jsTESTFunction:String  =
                 """
@@ -33,7 +33,7 @@ class JSManager: NSObject {
     """
     
     func prepareInjection() -> WKUserScript {
-        WKUserScript(source: jsTESTFunction ,injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: false)
+        WKUserScript(source: jsFunction ,injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: false)
     }
 }
 
