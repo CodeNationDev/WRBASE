@@ -22,4 +22,13 @@ struct ParamKeys {
             }
         }
     }
+    public struct NetworkReachability {
+        public enum Options: String {
+            case notReachable, reachableOnCellular, reachableOnWifi
+        }
+    }
+    public struct Autologin {
+        static var key = "autologin"
+        static var loginPageFlag = "qlspro.lacaixa.es/internal_forms_authentication"
+    }
 }

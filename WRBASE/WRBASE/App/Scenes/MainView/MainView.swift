@@ -22,6 +22,8 @@ class MainView: BaseViewController, UIGestureRecognizerDelegate {
         let localURL = Bundle.main.url(forResource: "sampleloginweb", withExtension: "html")
         webView.url = localURL!.absoluteString
         
+//        webView.url = "https://www.google.es"
+        
         shakeAction = {
             self.launchContextualMenu()
         }
@@ -60,7 +62,7 @@ class MainView: BaseViewController, UIGestureRecognizerDelegate {
             vc.actionButton1Target = {
                 CoreDataManager.shared.saveShortcut(name: vc.shortcutName, url: self.webView.urlRequested) { (result) -> (Void) in
                     if result {
-                        LoggerManager.shared.log(message: "Shortcut added \(self.webView.url) ")
+                        LoggerManager.shared.log(message: "Shortcut added \(self.webView.url) ", level: .success, type: .system)
                         
                         vc.bodyLabelText = NSLocalizedString("save_shortcut_succeed", comment: "")
                         vc.txShortcutName.isEnabled = false

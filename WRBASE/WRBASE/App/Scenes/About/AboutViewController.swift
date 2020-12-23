@@ -124,7 +124,7 @@ extension AboutViewController: CBKContextualMenuViewControllerDelegate, CBKPicke
         case .pre: updateEnvironment(env: .pre)
         case .pro: updateEnvironment(env: .pro)
         case .none:
-            LoggerManager.shared.log(message: "Unknown environment selected")
+            LoggerManager.shared.log(message: "Unknown environment selected", level: .error, type: .system)
         }
     }
     

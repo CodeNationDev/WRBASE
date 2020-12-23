@@ -110,7 +110,7 @@ extension LogsView: MFMailComposeViewControllerDelegate, UINavigationControllerD
                 present(composer, animated: true)
             }
         } catch let error {
-            LoggerManager.shared.log(message: error.localizedDescription)
+            LoggerManager.shared.log(message: error.localizedDescription, level: .error, type: .system)
         }
     }
     

@@ -136,7 +136,7 @@ public class CBKContextualMenuViewController: CBKBaseViewController, UITableView
 
     override public func viewDidAppear(_ animated: Bool) {
         openingAnimation()
-        LoggerManager.shared.log(message: "ContextualMenu opened")
+        LoggerManager.shared.log(message: "ContextualMenu opened", level: .info, type: .system)
     }
 
     override public func viewDidLayoutSubviews() {
@@ -283,7 +283,7 @@ public class CBKContextualMenuViewController: CBKBaseViewController, UITableView
 
     // MARK: - Actions
     @IBAction func closeButtonPressed(_ sender: UIButton) {
-        LoggerManager.shared.log(message: "ContextualMenu closed")
+        LoggerManager.shared.log(message: "ContextualMenu closed", level: .info, type: .system)
         endingAnimation(completionAnimation: nil)
     }
 }

@@ -133,7 +133,7 @@ extension ShortcutsViewController: UITableViewDataSource {
         data!.forEach {
             CoreDataManager.shared.updateShortcut(id: $0.id!, position: $0.position!) { (result) -> (Void) in
                 if result {
-                    LoggerManager.shared.log(message: "[COREDATA] shortcuts positions (reorder) updated")
+                    LoggerManager.shared.log(message: "Shortcuts positions (reorder) updated", level: .info, type: .coredata)
                 }
             }
         }

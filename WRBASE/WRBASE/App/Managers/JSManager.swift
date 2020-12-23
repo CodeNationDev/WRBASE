@@ -33,7 +33,7 @@ class JSManager: NSObject {
     """
     
     func prepareInjection() -> WKUserScript {
-        WKUserScript(source: jsFunction ,injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: false)
+        WKUserScript(source: jsMinimalTEST ,injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: false)
     }
 }
 

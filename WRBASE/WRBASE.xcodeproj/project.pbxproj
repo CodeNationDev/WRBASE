@@ -79,6 +79,10 @@
 		07FBC1082566DE1C00446CFC /* CBWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC1072566DE1C00446CFC /* CBWebView.swift */; };
 		07FBC1712567E47700446CFC /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC1702567E47700446CFC /* FirebaseManager.swift */; };
 		07FBC17A2567EB3E00446CFC /* CBNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC1792567EB3E00446CFC /* CBNavigator.swift */; };
+		07FF329B2591FE9B00571B3A /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FF329A2591FE9B00571B3A /* NetworkReachabilityManager.swift */; };
+		07FF32A12591FFCF00571B3A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 07FF32A02591FFCF00571B3A /* Alamofire */; };
+		07FF32A62592027F00571B3A /* Notification+Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FF32A52592027F00571B3A /* Notification+Names.swift */; };
+		07FF347325935DC300571B3A /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FF347225935DC300571B3A /* KeychainManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +167,9 @@
 		07FBC1072566DE1C00446CFC /* CBWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBWebView.swift; sourceTree = "<group>"; };
 		07FBC1702567E47700446CFC /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		07FBC1792567EB3E00446CFC /* CBNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBNavigator.swift; sourceTree = "<group>"; };
+		07FF329A2591FE9B00571B3A /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		07FF32A52592027F00571B3A /* Notification+Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Names.swift"; sourceTree = "<group>"; };
+		07FF347225935DC300571B3A /* KeychainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +186,7 @@
 				077A4E312577E0D100CF4D82 /* FirebaseInstallations in Frameworks */,
 				077A4E332577E0D100CF4D82 /* FirebaseDynamicLinks in Frameworks */,
 				077A4E3F2577E0D100CF4D82 /* FirebaseDatabase in Frameworks */,
+				07FF32A12591FFCF00571B3A /* Alamofire in Frameworks */,
 				077A4E392577E0D100CF4D82 /* FirebaseStorage in Frameworks */,
 				077A4E452577E0D100CF4D82 /* FirebaseCrashlytics in Frameworks */,
 				077A4E472577E0D100CF4D82 /* FirebaseRemoteConfig in Frameworks */,
@@ -435,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				077A4D122577051600CF4D82 /* UIApplication+ViewCycles.swift */,
+				07FF32A52592027F00571B3A /* Notification+Names.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -571,6 +580,8 @@
 		07FBC16F2567E46400446CFC /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				07FF347225935DC300571B3A /* KeychainManager.swift */,
+				07FF329A2591FE9B00571B3A /* NetworkReachabilityManager.swift */,
 				07FBC1702567E47700446CFC /* FirebaseManager.swift */,
 				074FC7902570531800ABC1DE /* CoreDataManager.swift */,
 				07EE162E257934E40003F565 /* ParamKeys.swift */,
@@ -619,6 +630,7 @@
 				077A4E462577E0D100CF4D82 /* FirebaseRemoteConfig */,
 				077A4E482577E0D100CF4D82 /* FirebaseInAppMessaging-Beta */,
 				077A4E4A2577E0D100CF4D82 /* GoogleUtilities_UserDefaults */,
+				07FF32A02591FFCF00571B3A /* Alamofire */,
 			);
 			productName = WRBASE;
 			productReference = 0744493F256688230088A546 /* WRBASE.app */;
@@ -693,6 +705,7 @@
 			mainGroup = 07444936256688230088A546;
 			packageReferences = (
 				077A4E2D2577E0CF00CF4D82 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				07FF329F2591FFCE00571B3A /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 07444940256688230088A546 /* Products */;
 			projectDirPath = "";
@@ -771,6 +784,7 @@
 				076F3C4F256FFEE90023CA42 /* CBKCurvedView.swift in Sources */,
 				07FBC1712567E47700446CFC /* FirebaseManager.swift in Sources */,
 				076F3C54256FFEE90023CA42 /* CBKContextualMenuViewController.swift in Sources */,
+				07FF32A62592027F00571B3A /* Notification+Names.swift in Sources */,
 				078A4FBB256D31BF00BC9BEC /* LoggerManager.swift in Sources */,
 				076F3ACA256DC0860023CA42 /* NavigatioBarTitleView.swift in Sources */,
 				074FC7912570531800ABC1DE /* CoreDataManager.swift in Sources */,
@@ -780,8 +794,10 @@
 				0744499625669BC40088A546 /* Splash.swift in Sources */,
 				078A4FBA256D31BF00BC9BEC /* WRBASE.xcdatamodeld in Sources */,
 				076F3A99256D61F10023CA42 /* CBKNavigationController.swift in Sources */,
+				07FF347325935DC300571B3A /* KeychainManager.swift in Sources */,
 				077A4D132577051600CF4D82 /* UIApplication+ViewCycles.swift in Sources */,
 				074FC7992570624200ABC1DE /* ShortcutSavaBoxViewController.swift in Sources */,
+				07FF329B2591FE9B00571B3A /* NetworkReachabilityManager.swift in Sources */,
 				076F3C01256E7A100023CA42 /* TitleHeaderNImageCell.swift in Sources */,
 				07FBC17A2567EB3E00446CFC /* CBNavigator.swift in Sources */,
 				07EE162F257934E40003F565 /* ParamKeys.swift in Sources */,
@@ -970,7 +986,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 9;
-				DEVELOPMENT_TEAM = SVJJRLQJHT;
+				DEVELOPMENT_TEAM = Z844BG28G2;
 				INFOPLIST_FILE = WRBASE/App/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -978,7 +994,7 @@
 				);
 				MARKETING_VERSION = 0.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.caixabank.adam.wrbaseios;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.caixabank.adam.wrbaseios-TEST";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -994,7 +1010,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 9;
-				DEVELOPMENT_TEAM = SVJJRLQJHT;
+				DEVELOPMENT_TEAM = Z844BG28G2;
 				INFOPLIST_FILE = WRBASE/App/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1002,7 +1018,7 @@
 				);
 				MARKETING_VERSION = 0.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.caixabank.adam.wrbaseios;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.caixabank.adam.wrbaseios-TEST";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1140,6 +1156,14 @@
 				minimumVersion = 7.1.0;
 			};
 		};
+		07FF329F2591FFCE00571B3A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1217,6 +1241,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 077A4E2D2577E0CF00CF4D82 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = GoogleUtilities_UserDefaults;
+		};
+		07FF32A02591FFCF00571B3A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07FF329F2591FFCE00571B3A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -7,7 +7,7 @@ class BaseViewController: UIViewController, UITextFieldDelegate {
     var editingFieldX:CGFloat = 0.0
     var viewID: String? {
         didSet {
-            LoggerManager.shared.log(message: "[VIEWCYCLE] \(viewID ?? "unknown") loaded")
+            LoggerManager.shared.log(message: "[VIEWCYCLE] \(viewID ?? "unknown") loaded", level: .error, type: .system)
         }
     }
     
@@ -29,6 +29,8 @@ class BaseViewController: UIViewController, UITextFieldDelegate {
         setupView()
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.networkReachabilityChanges(notification:)), name: Notification.Name.networkReachability, object: nil)
+        
         self.view.subviewsRecursive().forEach {
             if $0 is UITextField {
                 let subview = $0 as! UITextField
@@ -50,6 +52,15 @@ class BaseViewController: UIViewController, UITextFieldDelegate {
             if self.view.frame.origin.y != 0 {
                 self.view.frame.origin.y += keyboardSize.height
             }
+        }
+    }
+    
+    @objc func networkReachabilityChanges(notification: Notification) {
+        switch notification.object as? ParamKeys.NetworkReachability.Options {
+        case .notReachable: LoggerManager.shared.log(message: "Internet is not reacahable", level: .error, type: .network)
+        case .reachableOnCellular: LoggerManager.shared.log(message: "Internet is reachable over cellular", level: .info, type: .network)
+        case .reachableOnWifi: LoggerManager.shared.log(message: "Internet is reacahable over WiFi", level: .info, type: .network)
+        case .none: LoggerManager.shared.log(message: "Internet is on unknown reachability status", level: .error, type: .network)
         }
     }
     

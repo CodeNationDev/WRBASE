@@ -34,7 +34,7 @@ extension CBKDocumentManager: URLSessionDownloadDelegate {
             }
             try manager.moveItem(at: urlLocation, to: newLocation)
         } catch let error {
-            LoggerManager.shared.log(message: "[DOWNLOAD ERROR] Downloading document: \(error.localizedDescription)")
+            LoggerManager.shared.log(message: "Downloading document: \(error.localizedDescription)", level: .error, type: .documents_download)
             documentViewerDelegate?.didfinishDownloadWithError(error.localizedDescription)
         }
         urlLocation = urlLocation.deletingPathExtension()
@@ -44,7 +44,7 @@ extension CBKDocumentManager: URLSessionDownloadDelegate {
         }
         DispatchQueue.main.async {
             downloadTask.cancel()
-            LoggerManager.shared.log(message: "[DOWNLOAD] Document download succeed.")
+            LoggerManager.shared.log(message: "Document download succeed.", level: .success, type: .documents_download)
             self.docViewer?.presentPreview(animated: true)
         }
     }
@@ -52,7 +52,7 @@ extension CBKDocumentManager: URLSessionDownloadDelegate {
     public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         if error != nil {
             DispatchQueue.main.async {
-                LoggerManager.shared.log(message: "[DOWNLOAD ERROR] Downloading document: \(error!.localizedDescription)")
+                LoggerManager.shared.log(message: "Downloading document: \(error!.localizedDescription)", level: .error, type: .documents_download)
                 self.documentViewerDelegate?.didfinishDownloadWithError(error!.localizedDescription)
             }
         }
@@ -65,7 +65,7 @@ extension CBKDocumentManager: URLSessionDownloadDelegate {
                 self.name = name
             }
                 let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
-                LoggerManager.shared.log(message: "[DOWNLOAD] Download start: \(url)")
+            LoggerManager.shared.log(message: "Download start: \(url)", level: .info, type: .documents_download)
                 downloadTask = urlSession.downloadTask(with: url)
                 downloadTask?.resume()
             }

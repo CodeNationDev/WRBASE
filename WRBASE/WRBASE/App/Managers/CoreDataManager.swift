@@ -50,7 +50,7 @@ public class CoreDataManager: NSObject {
             }
             return items
         } catch let error as NSError {
-            LoggerManager.shared.log(message: "[ERROR] Could not fetch. \(error), \(error.userInfo)")
+            LoggerManager.shared.log(message: "[ERROR] Could not fetch. \(error), \(error.userInfo)", level: .error, type: .coredata)
         }
         return nil
     }
@@ -77,7 +77,7 @@ public class CoreDataManager: NSObject {
                 }
                 
             } catch let error {
-                LoggerManager.shared.log(message: "[ERROR] Updating shortcut: \(error.localizedDescription)")
+                LoggerManager.shared.log(message: "Updating shortcut: \(error.localizedDescription)", level: .error, type: .coredata)
             }
         }
     }
@@ -96,7 +96,7 @@ public class CoreDataManager: NSObject {
                 } else { completionHandler(false, "Deletion failed") }
                 
             } catch let error {
-                LoggerManager.shared.log(message: "[ERROR] Updating shortcut: \(error.localizedDescription)")
+                LoggerManager.shared.log(message: "[ERROR] Updating shortcut: \(error.localizedDescription)", level: .error, type: .coredata)
             }
         }
     }
@@ -110,7 +110,7 @@ public class CoreDataManager: NSObject {
             return max.count
             
         } catch let error as NSError {
-            LoggerManager.shared.log(message: "[ERROR] Could not fetch. \(error), \(error.userInfo)")
+            LoggerManager.shared.log(message: "[ERROR] Could not fetch. \(error), \(error.userInfo)", level: .error, type: .coredata)
         }
         return nil
     }
@@ -147,7 +147,7 @@ public class CoreDataManager: NSObject {
             }
             return items
         } catch let error as NSError {
-            LoggerManager.shared.log(message: "[ERROR] Could not fetch. \(error), \(error.userInfo)")
+            LoggerManager.shared.log(message: "[ERROR] Could not fetch. \(error), \(error.userInfo)", level: .error, type: .coredata)
         }
         return nil
     }
@@ -172,7 +172,7 @@ public class CoreDataManager: NSObject {
                 }
                 
             } catch let error {
-                LoggerManager.shared.log(message: "[ERROR] Updating parameter: \(error.localizedDescription)")
+                LoggerManager.shared.log(message: "Updating parameter: \(error.localizedDescription)", level: .error, type: .coredata)
             }
         }
     }

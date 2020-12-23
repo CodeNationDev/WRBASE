@@ -8,21 +8,44 @@ public struct LogItem {
     var message: String?
 }
 
+public enum LogLevel: String {
+    case error = "❌ "
+    case warning = "⚠️ "
+    case trace = "➖ "
+    case info = "ℹ️ "
+    case success = "✅ "
+}
+
+public enum LogType: String {
+    case coredata = "[COREDATA]: "
+    case firebase = "[FIREBASE]: "
+    case system = "[SYSTEM]: "
+    case documents_download = "[DOCUMENTS/DOWNLOAD]: "
+    case network = "[NETWORK]: "
+    
+    
+}
+
 public class LoggerManager: NSObject {
     public static let shared = LoggerManager()
     let filename = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("log.txt")
     var fileHandle: FileHandle?
     var context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     
-    public func log(message: String) {
-        let entity = NSEntityDescription.entity(forEntityName: "Log", in: context!)!
-        let log = NSManagedObject(entity: entity, insertInto: context!)
-        log.setValue(message, forKey: "message")
-        log.setValue(dateNow(), forKey: "date")
-        do {
-            try context?.save()
-        } catch let error {
-            print(error.localizedDescription)
+    public func log(message: String, level: LogLevel, type: LogType) {
+        DispatchQueue.main.async { [self] in
+            let entity = NSEntityDescription.entity(forEntityName: "Log", in: context!)!
+            let log = NSManagedObject(entity: entity, insertInto: context!)
+            var finalMessage = message
+            finalMessage.insert(contentsOf: type.rawValue, at: finalMessage.startIndex)
+            finalMessage.insert(contentsOf: level.rawValue, at: finalMessage.startIndex)
+            log.setValue(finalMessage, forKey: "message")
+            log.setValue(dateNow(), forKey: "date")
+            do {
+                try context?.save()
+            } catch let error {
+                print(error.localizedDescription)
+            }
         }
     }
     
@@ -41,7 +64,7 @@ public class LoggerManager: NSObject {
             }
             return items
         } catch let error as NSError {
-            LoggerManager.shared.log(message: "Could not fetch. \(error), \(error.userInfo)")
+            LoggerManager.shared.log(message: "Could not fetch. \(error), \(error.userInfo)", level: .error, type: .coredata)
         }
         return nil
     }
@@ -81,7 +104,7 @@ public class LoggerManager: NSObject {
                 }
             }
         } catch let error {
-            LoggerManager.shared.log(message: "Unable to write logs in file due to: \(error.localizedDescription)")
+            LoggerManager.shared.log(message: "Unable to write logs in file due to: \(error.localizedDescription)", level: .error, type: .coredata)
         }
     }
     

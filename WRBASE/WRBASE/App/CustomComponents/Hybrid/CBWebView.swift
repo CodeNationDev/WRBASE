@@ -4,15 +4,15 @@ import UIKit
 import WebKit
 
 public protocol CBKWKDelegate {
-     func urlRequested(url: String)
-     func downloadTask(forResult: Bool)
+    func urlRequested(url: String)
+    func downloadTask(forResult: Bool)
+    func didLoginPageRequested(url: String)
 }
 extension CBKWKDelegate {
     func urlRequested(url: String){}
     public func downloadTask(forResult: Bool){}
+    public func didLoginPageRequested(url: String){}
 }
-
-
 
 enum MimeType: String {
     case pdf = "application/pdf"
@@ -28,13 +28,19 @@ enum MimeType: String {
     case html = "text/html"
 }
 
+struct UserAutoLogin: Codable {
+    var user: String?
+    var pass: String?
+}
+
 
 class CBWebView: WKWebView, WKNavigationDelegate, WKUIDelegate, UIDocumentInteractionControllerDelegate, CBKDocumentManagerDelegate {
-
+    
     public var delegate: CBKWKDelegate?
     var documentViewer: UIDocumentInteractionController?
     var documentManager: CBKDocumentManager?
     var userController:WKUserContentController = WKUserContentController()
+    var user:[String:String] = [:]
     
     public override init(frame: CGRect, configuration: WKWebViewConfiguration) {
         super.init(frame: frame, configuration: configuration)
@@ -68,8 +74,11 @@ class CBWebView: WKWebView, WKNavigationDelegate, WKUIDelegate, UIDocumentIntera
                 guard url != nil else {
                     return
                 }
-                debugPrint("### EP  \(url!.absoluteString)")
-                LoggerManager.shared.log(message: "Navigating to: \(url!.absoluteString)")
+                //For autologin proccess
+                if ((url!.absoluteString.contains("sampleloginweb"))) {
+                    delegate?.didLoginPageRequested(url: url!.absoluteString)
+                }
+                LoggerManager.shared.log(message: "Navigating to: \(url!.absoluteString)", level: .info, type: .system)
                 delegate?.urlRequested(url: url!.absoluteString)
             }
         }
@@ -114,10 +123,10 @@ class CBWebView: WKWebView, WKNavigationDelegate, WKUIDelegate, UIDocumentIntera
 extension CBWebView: WKScriptMessageHandler {
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        print(message.body)
+        /*TODO: We need check if login process is success or fail for update the key only when login is correct. */
+        KeychainManager.shared.saveKeychainKeyValue(str: "\(message.body)", forKey: ParamKeys.Autologin.key)
     }
 }
-
 
 
 internal extension String {

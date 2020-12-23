@@ -8,13 +8,21 @@ enum QuickActions: String {
     case shortcuts = "com.app.shortcut.shortcuts"
 }
 
+public struct Singletons {
+    static var networkReachability: NetworkActivityObserver?
+}
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
     var shortcutItemToProcess: UIApplicationShortcutItem?
+    var networkReachability: NetworkActivityObserver?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        networkReachability = NetworkActivityObserver()
+        Singletons.networkReachability = networkReachability
+        
         FirebaseApp.configure()
         let _ = FirebaseManager.shared
         
@@ -59,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let container = NSPersistentContainer(name: "WRBASE")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                LoggerManager.shared.log(message: "[COREDATA ERROR] Unresolved error \(error), \(error.userInfo)")
+                LoggerManager.shared.log(message: "Unresolved error \(error), \(error.userInfo)", level: .error, type: .coredata)
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
@@ -74,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 try context.save()
             } catch {
                 let nserror = error as NSError
-                LoggerManager.shared.log(message: "[COREDATA ERROR] Unresolved error saving in context \(nserror), \(nserror.userInfo)")
+                LoggerManager.shared.log(message: "Unresolved error saving in context \(nserror), \(nserror.userInfo)", level: .error, type: .coredata)
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }

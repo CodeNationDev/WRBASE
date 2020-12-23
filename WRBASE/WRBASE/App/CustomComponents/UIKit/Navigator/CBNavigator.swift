@@ -11,9 +11,6 @@ public class CBNavigator: UIView {
         }
     }
     
-    
-    
-    
     public var urlRequested: String = ""
     
     var webView: CBWebView = {
@@ -52,5 +49,8 @@ public class CBNavigator: UIView {
 extension CBNavigator: CBKWKDelegate {
     public func urlRequested(url: String) {
         self.urlRequested = url
+    }
+    public func didLoginPageRequested(url: String) {
+//        webView.configuration.userContentController.addUserScript(JSManager.shared.prepareInjection())
     }
 }
