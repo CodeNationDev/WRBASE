@@ -6,7 +6,7 @@ import WebKit
 class JSManager: NSObject {
     public static let shared = JSManager()
     
-    private var jsFunction:String  =
+    public var jsAutologinGetCredentials:String  =
                 """
                           let btn = document.getElementById('btnLogin');
                           let u = document.getElementById('username-input');
@@ -16,9 +16,17 @@ class JSManager: NSObject {
                           });
                 """
     
-//    "webkit.messageHandlers.callbackHandler.postMessage(JSON.stringify({u.value:p.value}));"
+    public var jsAutologinSetCredentials:String  =
+                """
+                          let btn = document.getElementById('btnLogin');
+                          btn.addEventListener('click', function(){
+                          webkit.messageHandlers.callbackHandler.postMessage("Hola");
+                          });
+                
+                """
     
-    private var jsTESTFunction:String  =
+    
+    public var jsTESTFunction:String  =
                 """
                           let btn = document.getElementById('btnLogin');
                           btn.addEventListener('click', function(){
@@ -33,7 +41,7 @@ class JSManager: NSObject {
     """
     
     func prepareInjection() -> WKUserScript {
-        WKUserScript(source: jsFunction ,injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: false)
+        WKUserScript(source: jsMinimalTEST ,injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: false)
     }
 }
 

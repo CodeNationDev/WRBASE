@@ -74,10 +74,18 @@ class CBWebView: WKWebView, WKNavigationDelegate, WKUIDelegate, UIDocumentIntera
                 guard url != nil else {
                     return
                 }
-                //For autologin proccess
+                // IF WE HAVE CREDENTIALS INTO KEYCHAIN, TRY TO DO THE AUTOLOGIN
                 if ((url!.absoluteString.contains("sampleloginweb"))) {
-                    delegate?.didLoginPageRequested(url: url!.absoluteString)
+                    if let _ = KeychainManager.shared.loadKeychainKey(key: ParamKeys.Autologin.key) {
+                        self.evaluateJavaScript(JSManager.shared.jsAutologinSetCredentials)
+                    }
                 }
+                
+                //IF LOGIN FAILS, WAIT THE NEW CREDENTIALS
+                if ((url!.absoluteString.contains("loginFailed"))) {
+                    self.evaluateJavaScript(JSManager.shared.jsAutologinGetCredentials)
+                }
+                
                 LoggerManager.shared.log(message: "Navigating to: \(url!.absoluteString)", level: .info, type: .system)
                 delegate?.urlRequested(url: url!.absoluteString)
             }
@@ -139,4 +147,5 @@ internal extension String {
         return NSPredicate(format: "SELF MATCHES %@", urlRegEx).evaluate(with: self) || self.contains("http")
     }
 }
+
 

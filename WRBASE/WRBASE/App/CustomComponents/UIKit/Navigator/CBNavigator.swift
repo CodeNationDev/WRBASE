@@ -14,12 +14,12 @@ public class CBNavigator: UIView {
     public var urlRequested: String = ""
     
     var webView: CBWebView = {
-        let contentController = WKUserContentController()
-        let scrpt = JSManager.shared.prepareInjection()
-        contentController.addUserScript(scrpt)
-        let config = WKWebViewConfiguration()
-        config.userContentController = contentController
-        let webView = CBWebView(frame: .zero, configuration: config)
+//        let contentController = WKUserContentController()
+//        let scrpt = JSManager.shared.prepareInjection()
+//        contentController.addUserScript(scrpt)
+//        let config = WKWebViewConfiguration()
+//        config.userContentController = contentController
+        let webView = CBWebView(frame: .zero)
         webView.translatesAutoresizingMaskIntoConstraints = false
         return webView
     }()
@@ -51,6 +51,8 @@ extension CBNavigator: CBKWKDelegate {
         self.urlRequested = url
     }
     public func didLoginPageRequested(url: String) {
-//        webView.configuration.userContentController.addUserScript(JSManager.shared.prepareInjection())
+        let contentController = WKUserContentController()
+        let scrpt = JSManager.shared.prepareInjection()
+        contentController.addUserScript(scrpt)
     }
 }

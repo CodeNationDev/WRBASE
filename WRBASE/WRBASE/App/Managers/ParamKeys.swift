@@ -16,8 +16,8 @@ struct ParamKeys {
             
             var storedValue: String? {
                 switch self {
-                case .url_base: return (CoreDataManager.shared.loadParameter(forKey: Options.url_base.rawValue)?.first?.value)!
-                case .version_store: return (CoreDataManager.shared.loadParameter(forKey: Options.version_store.rawValue)?.first?.value)!
+                case .url_base: return CoreDataManager.shared.loadParameter(forKey: Options.url_base.rawValue)?.first?.value
+                case .version_store: return CoreDataManager.shared.loadParameter(forKey: Options.version_store.rawValue)?.first?.value
                 }
             }
         }
