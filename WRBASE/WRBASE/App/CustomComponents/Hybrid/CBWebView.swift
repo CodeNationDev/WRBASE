@@ -18,7 +18,7 @@ enum MimeType: String {
     case pdf = "application/pdf"
     case doc,docx = "application/msword"
     case xls, xlsx = "application/vnd.ms-excel"
-    case ppt = "application/vnd.ms-powerpoint"
+    case ppt, pptx = "application/vnd.ms-powerpoint"
     case odt = "application/vnd.oasis.opendocument.text"
     case ods = "application/vnd.oasis.opendocument.spreadsheet"
     case odp = "application/vnd.oasis.opendocument.presentation"
@@ -75,9 +75,12 @@ class CBWebView: WKWebView, WKNavigationDelegate, WKUIDelegate, UIDocumentIntera
                     return
                 }
                 // IF WE HAVE CREDENTIALS INTO KEYCHAIN, TRY TO DO THE AUTOLOGIN
+                //url login contains: qlspro.lacaixa.es/internal_forms_authentication
                 if ((url!.absoluteString.contains("sampleloginweb"))) {
                     if let _ = KeychainManager.shared.loadKeychainKey(key: ParamKeys.Autologin.key) {
                         self.evaluateJavaScript(JSManager.shared.jsAutologinSetCredentials)
+                    } else {
+                        self.evaluateJavaScript(JSManager.shared.jsAutologinGetCredentials)
                     }
                 }
                 

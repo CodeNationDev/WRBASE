@@ -8,10 +8,6 @@ enum QuickActions: String {
     case shortcuts = "com.app.shortcut.shortcuts"
 }
 
-public struct Singletons {
-    static var networkReachability: NetworkActivityObserver?
-}
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -21,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         networkReachability = NetworkActivityObserver()
-        Singletons.networkReachability = networkReachability
         
         FirebaseApp.configure()
         let _ = FirebaseManager.shared
